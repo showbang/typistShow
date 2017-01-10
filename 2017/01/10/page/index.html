@@ -3,21 +3,27 @@
 <head>
     <meta charset="utf-8">
     
-    <title>page | Show&#39;s blog</title>
+    <title>contains, substring, indexOf | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="my first hexo blog">
+    <meta name="description" content="contains - 문자나 문자열을 포함하는지 확인 후 true,false 반환substring - 문자열의 인덱스값을 받은 후, 인덱스값에 알맞는 문자 또는 문자열을 반환indexOf - 문자나 문자열을 받아 그에 맞는 인덱스 값을 반환
+사용법을 예로 들면
+contains123String movieTitle=&quot;나는 네가 지난 여름에 한 일을 알고 있다.&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="page">
+<meta property="og:title" content="contains, substring, indexOf">
 <meta property="og:url" content="https://showbang.github.io/typistShow/2017/01/10/page/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="my first hexo blog">
-<meta property="og:updated_time" content="2017-01-10T05:07:13.090Z">
+<meta property="og:description" content="contains - 문자나 문자열을 포함하는지 확인 후 true,false 반환substring - 문자열의 인덱스값을 받은 후, 인덱스값에 알맞는 문자 또는 문자열을 반환indexOf - 문자나 문자열을 받아 그에 맞는 인덱스 값을 반환
+사용법을 예로 들면
+contains123String movieTitle=&quot;나는 네가 지난 여름에 한 일을 알고 있다.&quot;">
+<meta property="og:updated_time" content="2017-01-10T06:21:07.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page">
-<meta name="twitter:description" content="my first hexo blog">
+<meta name="twitter:title" content="contains, substring, indexOf">
+<meta name="twitter:description" content="contains - 문자나 문자열을 포함하는지 확인 후 true,false 반환substring - 문자열의 인덱스값을 받은 후, 인덱스값에 알맞는 문자 또는 문자열을 반환indexOf - 문자나 문자열을 받아 그에 맞는 인덱스 값을 반환
+사용법을 예로 들면
+contains123String movieTitle=&quot;나는 네가 지난 여름에 한 일을 알고 있다.&quot;">
     
 
     
@@ -137,7 +143,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        page
+        contains, substring, indexOf
         </h1>
     
 
@@ -153,7 +159,15 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>contains - 문자나 문자열을 포함하는지 확인 후 true,false 반환<br>substring - 문자열의 인덱스값을 받은 후, 인덱스값에 알맞는 문자 또는 문자열을 반환<br>indexOf - 문자나 문자열을 받아 그에 맞는 인덱스 값을 반환</p>
+<p>사용법을 예로 들면</p>
+<h1 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String movieTitle=<span class="string">"나는 네가 지난 여름에 한 일을 알고 있다."</span>;</div><div class="line">System.out.println(<span class="string">"contains의 반환값 =&gt;"</span>+movieTitle.contains(<span class="string">"여름"</span>));</div><div class="line">System.out.println(<span class="string">"contains의 반환값 =&gt;"</span>+movieTitle.contains(<span class="string">"겨울"</span>));</div></pre></td></tr></table></figure>
+<p>이렇게 contains의 인자값이 포함되어 있으면 true 없으면 false를 반환한다.</p>
+<p>#substring</p>
+<p>만약 인자값을 하나의 인덱스만 준다면 그 인덱스부터 문자열을 반환한다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String movieTitle=<span class="string">"나는 네가 지난 여름에 한 일을 알고 있다."</span>;</div><div class="line">System.out.println(<span class="string">"6번째 인덱스의 문자=&gt;"</span>+movieTitle.substring(<span class="number">6</span>));</div></pre></td></tr></table></figure></p>
+<p>인자값을 두개를 준다면 첫번째 인자값은 시작되는 인덱스를 두번째 인덱스는 끝나는 인덱스를 의미한다. 주의할 점은 끝나는 인덱스를 포함하지 않고 그전 인덱스까지만 출력한다.<br>만약 밑의 코딩처럼 입력한다면 출력문은 아래와 같다. 네가에서 끝난게 아니라 네가다음의 공백까지 출력된다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String movieTitle = <span class="string">"나는 네가 지난 여름에 한 일을 알고 있다."</span></div><div class="line">System.out.println(<span class="string">"0번째 인덱스부터 6번째 인덱스까지의 문자열=&gt;"</span>+movieTitle.substring(<span class="number">0</span>,<span class="number">6</span>));</div></pre></td></tr></table></figure></p>
+<h1 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h1><p>문자를 줬을때는 그 문자의 인덱스를 문자열을 줬을때는 문자열이 시작하는 부분의 인덱스를 반환한다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String movieTitle = <span class="string">"나는 네가 지난 여름에 한 일을 알고 있다."</span></div><div class="line">System.out.println(<span class="string">"지난이라는 문자열을 포함한 인덱스의 시작값=&gt;"</span>+movieTitle.indexOf(<span class="string">"지난"</span>));</div></pre></td></tr></table></figure></p>
+
         </div>
         <footer class="article-footer">
             
@@ -297,10 +311,20 @@
         
 <nav id="article-nav">
     
+        <a href="/typistShow/2017/01/10/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            인영이는 이쁘다.
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/typistShow/2017/01/10/testpost/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">나의 첫번째 포스팅입니다.</p>
+        <p class="article-nav-title">창크기 조절 시 창 크기에 맞게 CSS 조절하는 방법.</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -319,6 +343,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/typistShow/2017/01/10/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/typistShow/2017/01/10/hello-world/" class="title">인영이는 이쁘다.</a></p>
+                            <p class="item-date"><time datetime="2017-01-10T05:00:54.000Z" itemprop="datePublished">2017-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/typistShow/2017/01/10/page/" class="thumbnail">
     
     
@@ -331,7 +375,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/typistShow/2017/01/10/page/" class="title">page</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/01/10/page/" class="title">contains, substring, indexOf</a></p>
                             <p class="item-date"><time datetime="2017-01-10T05:00:54.000Z" itemprop="datePublished">2017-01-10</time></p>
                         </div>
                     </li>
@@ -351,28 +395,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/typistShow/2017/01/10/testpost/" class="title">나의 첫번째 포스팅입니다.</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/01/10/testpost/" class="title">창크기 조절 시 창 크기에 맞게 CSS 조절하는 방법.</a></p>
                             <p class="item-date"><time datetime="2017-01-10T04:20:28.000Z" itemprop="datePublished">2017-01-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/typistShow/2017/01/10/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/typistShow/2017/01/10/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2017-01-10T04:18:44.146Z" itemprop="datePublished">2017-01-10</time></p>
                         </div>
                     </li>
                 
