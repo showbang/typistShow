@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>창크기 조절 시 창 크기에 맞게 CSS 조절하는 방법. | Show&#39;s blog</title>
+    <title>static, final, abstract | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="동적인 css로 코딩을 하지 않았을 경우 처음 창크기에 맞게 css가 조절된 후 css가 변경되지 않을 때가 있다.이때는 jQuery를 이용해서 쉽게 resize를 시킬 수 있다.
-123$(window).resize(function()&amp;#123;	//제어해야 할 코드&amp;#125;).resize();">
+    <meta name="description" content="Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
+final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화">
 <meta property="og:type" content="article">
-<meta property="og:title" content="창크기 조절 시 창 크기에 맞게 CSS 조절하는 방법.">
-<meta property="og:url" content="https://showbang.github.io/typistShow/2017/01/10/testpost/index.html">
+<meta property="og:title" content="static, final, abstract">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/01/10/staticFinal/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="동적인 css로 코딩을 하지 않았을 경우 처음 창크기에 맞게 css가 조절된 후 css가 변경되지 않을 때가 있다.이때는 jQuery를 이용해서 쉽게 resize를 시킬 수 있다.
-123$(window).resize(function()&amp;#123;	//제어해야 할 코드&amp;#125;).resize();">
-<meta property="og:image" content="https://showbang.github.io/typistShow/image/resize.png">
-<meta property="og:updated_time" content="2017-01-10T07:49:29.028Z">
+<meta property="og:description" content="Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
+final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화">
+<meta property="og:image" content="https://showbang.github.io/typistShow/image/java.png">
+<meta property="og:updated_time" content="2017-01-10T07:53:37.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="창크기 조절 시 창 크기에 맞게 CSS 조절하는 방법.">
-<meta name="twitter:description" content="동적인 css로 코딩을 하지 않았을 경우 처음 창크기에 맞게 css가 조절된 후 css가 변경되지 않을 때가 있다.이때는 jQuery를 이용해서 쉽게 resize를 시킬 수 있다.
-123$(window).resize(function()&amp;#123;	//제어해야 할 코드&amp;#125;).resize();">
-<meta name="twitter:image" content="https://showbang.github.io/typistShow/image/resize.png">
+<meta name="twitter:title" content="static, final, abstract">
+<meta name="twitter:description" content="Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
+final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/image/java.png">
     
 
     
@@ -135,14 +135,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-testpost" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-staticFinal" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        창크기 조절 시 창 크기에 맞게 CSS 조절하는 방법.
+        static, final, abstract
         </h1>
     
 
@@ -150,23 +150,26 @@
         
         
             <div class="article-subtitle">
-                <a href="/typistShow/2017/01/10/testpost/" class="article-date">
-    <time datetime="2017-01-10T04:20:28.000Z" itemprop="datePublished">2017-01-10</time>
+                <a href="/typistShow/2017/01/10/staticFinal/" class="article-date">
+    <time datetime="2017-01-10T07:37:03.000Z" itemprop="datePublished">2017-01-10</time>
 </a>
                 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>동적인 css로 코딩을 하지 않았을 경우 처음 창크기에 맞게 css가 조절된 후 css가 변경되지 않을 때가 있다.<br>이때는 jQuery를 이용해서 쉽게 resize를 시킬 수 있다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(window).resize(function()&#123;</div><div class="line">	<span class="comment">//제어해야 할 코드</span></div><div class="line">&#125;).resize();</div></pre></td></tr></table></figure>
+            <h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3><h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><p> -field와 method 앞에 붙는다.<br> -method 앞에 붙을경우는 field를 변경하지 못한다.<br> -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.</p>
+<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p> -마지막 상태값을 가져야 할때 쓰는 keword.<br> -변수에 final이 붙으면 변수를 상수화 시킨다.<br> -final이 Class에 붙으면 그 Class는 더이상 확장시키지 않는다.<br> -final이 method에 붙으면 그 method는 더이상 overriding 하지 않는다.<br> -final이 field에 붙으면 그 값은 더이상 상태값을 변경시키지 않는다.</p>
+<h1 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h1><p> -오버라이딩하여 하위클래스에서 메소드를 호출하게 되면 상위클래스에 있는 메소드는 사용되지 않기 때문에 상위클래스의 메소드는 abstract를 이용하여 추상화시킨다.</p>
+<p><img src="java.png" alt=""></p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/01/10/testpost/" data-id="cixr7jfwg00029ougi9a3lw8w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/01/10/staticFinal/" data-id="cixr7jfwe00019oug90tpprnm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -303,16 +306,12 @@
         
 <nav id="article-nav">
     
-        <a href="/typistShow/2017/01/10/page/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            contains, substring, indexOf
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/typistShow/2017/01/10/inyoung/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">인영이는 이뻐</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -472,7 +471,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/01/10/testpost/';
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/01/10/staticFinal/';
     
     (function() {
     var dsq = document.createElement('script');
