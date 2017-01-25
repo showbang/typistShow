@@ -3,29 +3,32 @@
 <head>
     <meta charset="utf-8">
     
-    <title>자료형비교 | Show&#39;s blog</title>
+    <title>POI를 이용하여 엑셀파일 생성하기 | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="자바스크립트 == 연산자와 === 연산자의 차이점자바스크립트 소스코드를 찾다보면 비교연산자중 ==와 ===를 볼 수 있다.이 둘의 차이점은== =&amp;gt; 값을 비교한다.=== =&amp;gt; 값과 자료형을 비교한다.
-예를 들면
-123456789101112131415161718var a = 1;var b = &quot;1&quot;;// ==연산자일 경우 값이 같으므로 true 반">
+    <meta name="description" content="POI 이용 엑셀 파일 생성데이터를 넘겨받아 엑셀파일로 만드는 방법에 관해 포스팅을 해보겠습니다.
+먼저 POI를 이용하기 위하여 POI라이브러리가 필요합니다.
+POI jar파일은 http://poi.apache.org/download.html 에서 다운받은 후 라이브러리에 추가해주시면 됩니다.
+POI의 엑셀생성방식은 엑셀 97~03버전으로 생성되는 HSSF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="자료형비교">
-<meta property="og:url" content="https://showbang.github.io/typistShow/2017/01/17/자료형비교/index.html">
+<meta property="og:title" content="POI를 이용하여 엑셀파일 생성하기">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/01/25/생성/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="자바스크립트 == 연산자와 === 연산자의 차이점자바스크립트 소스코드를 찾다보면 비교연산자중 ==와 ===를 볼 수 있다.이 둘의 차이점은== =&amp;gt; 값을 비교한다.=== =&amp;gt; 값과 자료형을 비교한다.
-예를 들면
-123456789101112131415161718var a = 1;var b = &quot;1&quot;;// ==연산자일 경우 값이 같으므로 true 반">
-<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/===.png">
-<meta property="og:updated_time" content="2017-01-25T06:13:07.018Z">
+<meta property="og:description" content="POI 이용 엑셀 파일 생성데이터를 넘겨받아 엑셀파일로 만드는 방법에 관해 포스팅을 해보겠습니다.
+먼저 POI를 이용하기 위하여 POI라이브러리가 필요합니다.
+POI jar파일은 http://poi.apache.org/download.html 에서 다운받은 후 라이브러리에 추가해주시면 됩니다.
+POI의 엑셀생성방식은 엑셀 97~03버전으로 생성되는 HSSF">
+<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
+<meta property="og:updated_time" content="2017-01-25T08:47:35.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="자료형비교">
-<meta name="twitter:description" content="자바스크립트 == 연산자와 === 연산자의 차이점자바스크립트 소스코드를 찾다보면 비교연산자중 ==와 ===를 볼 수 있다.이 둘의 차이점은== =&amp;gt; 값을 비교한다.=== =&amp;gt; 값과 자료형을 비교한다.
-예를 들면
-123456789101112131415161718var a = 1;var b = &quot;1&quot;;// ==연산자일 경우 값이 같으므로 true 반">
-<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/===.png">
+<meta name="twitter:title" content="POI를 이용하여 엑셀파일 생성하기">
+<meta name="twitter:description" content="POI 이용 엑셀 파일 생성데이터를 넘겨받아 엑셀파일로 만드는 방법에 관해 포스팅을 해보겠습니다.
+먼저 POI를 이용하기 위하여 POI라이브러리가 필요합니다.
+POI jar파일은 http://poi.apache.org/download.html 에서 다운받은 후 라이브러리에 추가해주시면 됩니다.
+POI의 엑셀생성방식은 엑셀 97~03버전으로 생성되는 HSSF">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
     
 
     
@@ -134,18 +137,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/typistShow/categories/javascript/">javascript</a>
+    <a class="page-title-link" href="/typistShow/categories/java/">java</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-자료형비교" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-생성" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        자료형비교
+        POI를 이용하여 엑셀파일 생성하기
         </h1>
     
 
@@ -153,17 +156,22 @@
         
         
             <div class="article-subtitle">
-                <a href="/typistShow/2017/01/17/자료형비교/" class="article-date">
-    <time datetime="2017-01-17T06:21:35.000Z" itemprop="datePublished">2017-01-17</time>
+                <a href="/typistShow/2017/01/25/생성/" class="article-date">
+    <time datetime="2017-01-25T08:04:11.000Z" itemprop="datePublished">2017-01-25</time>
 </a>
                 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="자바스크립트-연산자와-연산자의-차이점"><a href="#자바스크립트-연산자와-연산자의-차이점" class="headerlink" title="자바스크립트 == 연산자와 === 연산자의 차이점"></a>자바스크립트 == 연산자와 === 연산자의 차이점</h3><p>자바스크립트 소스코드를 찾다보면 비교연산자중 ==와 ===를 볼 수 있다.<br>이 둘의 차이점은<br>== =&gt; 값을 비교한다.<br>=== =&gt; 값과 자료형을 비교한다.</p>
-<p>예를 들면</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="string">"1"</span>;</div><div class="line"></div><div class="line"><span class="comment">// ==연산자일 경우 값이 같으므로 true 반환</span></div><div class="line"><span class="keyword">if</span>(a==b) &#123;</div><div class="line">	alert(<span class="string">"true"</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	alert(<span class="string">"false"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ===연산자의 경우 값은 같지만, 자료형이 다르므로 false 반환</span></div><div class="line"><span class="comment">// int값과 String값의 자료형 비교는 false.</span></div><div class="line"><span class="keyword">if</span>(a===b) &#123;</div><div class="line">	alert(<span class="string">"true"</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	alert(<span class="string">"false"</span>);</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+            <h3 id="POI-이용-엑셀-파일-생성"><a href="#POI-이용-엑셀-파일-생성" class="headerlink" title="POI 이용 엑셀 파일 생성"></a>POI 이용 엑셀 파일 생성</h3><p>데이터를 넘겨받아 엑셀파일로 만드는 방법에 관해 포스팅을 해보겠습니다.</p>
+<p>먼저 POI를 이용하기 위하여 POI라이브러리가 필요합니다.</p>
+<p>POI jar파일은 <a href="http://poi.apache.org/download.html" target="_blank" rel="external">http://poi.apache.org/download.html</a> 에서 다운받은 후 라이브러리에 추가해주시면 됩니다.</p>
+<p>POI의 엑셀생성방식은 엑셀 97~03버전으로 생성되는 HSSF,엑셀 2007이상의 XSSF 그리고 가장 최근에 나온 SXSSF 세가지 방식이 있다.</p>
+<p>이번에 포스팅할 방식은 보편화되어있는 엑셀2007이상의 XSSF 방식이다.</p>
+<p>엑셀에 데이터를 세팅하는 방법은 각자의 방법이 있기 때문에 이번 포스팅은 나의 방식대로 포스팅 하겠다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@param</span> filePath=엑셀파일을 생성시킬 위치</div><div class="line">* <span class="doctag">@param</span> excelName=생설할 엑셀파일의 이름</div><div class="line">* <span class="doctag">@param</span> headerList=엑셀파일의 헤더맵</div><div class="line">* <span class="doctag">@param</span> list=데이터를 담을 맵</div><div class="line">* <span class="doctag">@param</span> data=엑셀파일을 생성할 데이터를 담은 리스트</div><div class="line">* 꼭 맵을통하여 세팅을 하지 않아도 상관없습니다.</div><div class="line">*/</div><div class="line"></div><div class="line">String filePath = <span class="string">"파일을 생성시킬 위치"</span>;</div><div class="line">String excelName = <span class="string">"생성할 엑셀의 이름"</span>;</div><div class="line">Map&lt;String,String&gt; headerList = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</div><div class="line">Map&lt;String,String&gt; list = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</div><div class="line">List&lt;dataType&gt; data = <span class="string">"생성할 리스트를 담습니다."</span>;</div><div class="line"></div><div class="line"><span class="comment">//headerList를 세팅할 만큼 세팅합니다.</span></div><div class="line">headerList.put(<span class="string">"0"</span>, <span class="string">"이름"</span>);</div><div class="line">headerList.put(<span class="string">"1"</span>, <span class="string">"이름"</span>);</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line"></div><div class="line"><span class="comment">//XSSFWorkbook 세팅</span></div><div class="line">XSSFWorbook workbook = <span class="keyword">new</span> XSSFWorkbook();</div><div class="line">XSSFSheet sheet = workbook.createSheet(<span class="string">"sheet의 이름"</span>);</div><div class="line">XSSFRow row = <span class="keyword">null</span>;</div><div class="line">XSSFCell cell = <span class="keyword">null</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=data.size(); i++) &#123;</div><div class="line">	<span class="comment">//data의 크기만큼 로우를 생성합니다.</span></div><div class="line">	row=sheet.createRow((<span class="keyword">short</span>)i);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;headerList.size(); k++) &#123;</div><div class="line">		<span class="comment">//headerList의 크기만큼 i번째 row에 cell을 생성합니다.</span></div><div class="line">		cell=row.createCell(k);</div><div class="line">		<span class="comment">//맨윗줄에 headerList를 세팅합니다.</span></div><div class="line">		<span class="keyword">if</span>(i==<span class="number">0</span>) &#123;</div><div class="line">			<span class="comment">//CellStyle은 필요에따라서 세팅합니다.</span></div><div class="line">			CellStyle style = workbook.createCellStyle();</div><div class="line">			style.setFillForegroundColor(<span class="string">"셀color 세팅"</span>);</div><div class="line">			style.setFillPattern(<span class="string">"셀의 패턴을 세팅"</span>);</div><div class="line">			style.setAlignment(<span class="string">"셀데이터의 정렬조건 세팅"</span>);</div><div class="line">			cell.setCellStyle(style);</div><div class="line">			sheet.setColumnWidth(index,<span class="string">"셀의 너비"</span>);</div><div class="line">			<span class="comment">//headerList의 데이터를 세팅</span></div><div class="line">			cell.setCellValue(headerList.get(Integer.toString(k)));</div><div class="line">		&#125; </div><div class="line">		<span class="comment">//엑셀파일에 넣을 데이터를 세팅합니다.</span></div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="comment">//i-1을하는이유는 headerList가 i번쨰 row이기 때문.</span></div><div class="line">			&lt;dataType&gt; excelData = data.get(i-<span class="number">1</span>); </div><div class="line">			<span class="comment">//리스트의 크기만큼 세팅합니다.</span></div><div class="line">			list.put(<span class="string">"0"</span>,<span class="string">"넣을데이터"</span>);</div><div class="line">			list.put(<span class="string">"1"</span>,<span class="string">"넣을데이터"</span>);</div><div class="line">			.</div><div class="line">			.</div><div class="line">			.</div><div class="line">			cell.setCellValue(list.get(Integer.toString(k)));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//엑셀파일 세팅 후 파일 생성</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	File file = <span class="keyword">new</span> File(filePath);</div><div class="line">	<span class="comment">//file을 생성할 폴더가 없으면 생성합니다.</span></div><div class="line">	file.mkdirs();</div><div class="line"></div><div class="line">	FileOutputStream fileOutputStream = </div><div class="line">			<span class="keyword">new</span> FileOutputStream(file+File.separator+excelName);</div><div class="line"></div><div class="line">	<span class="comment">//생성한 엑셀파일을 outputStream 해줍니다.</span></div><div class="line">	workbook.write(fileOutputStream);</div><div class="line">	fileOutputStream.close();</div><div class="line">&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">	e.printStackTrace();</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>이렇게 POI XSSF를 통하여 엑셀파일을 생성할 수 있다.<br>왠만한 데이터는 처리 가능하지만 XSSF가 처리가능한 크기를 넘어가면<br>OutOfMemory에러가 나기 때문에 이걸 보완한 SXSFF 를 사용할 수 도 있다.</p>
 
         </div>
         <footer class="article-footer">
@@ -171,7 +179,7 @@
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/01/17/자료형비교/" data-id="ciyco3d4b0003xkugy3fd1kz7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/01/25/생성/" data-id="ciyco3d4y0009xkugzqcoszo2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -308,20 +316,10 @@
         
 <nav id="article-nav">
     
-        <a href="/typistShow/2017/01/25/자바압축파일생성/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            자바압축파일생성
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/typistShow/2017/01/11/폴더테스트/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/01/25/자바압축파일생성/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Servlet이란</p>
+        <p class="article-nav-title">자바압축파일생성</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -510,7 +508,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/01/17/자료형비교/';
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/01/25/생성/';
     
     (function() {
     var dsq = document.createElement('script');
