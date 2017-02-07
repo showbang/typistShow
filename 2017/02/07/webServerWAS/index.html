@@ -3,18 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2017/1 | Show&#39;s blog</title>
+    <title>webServer와 WAS의 차이점 | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="my first hexo blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Show's blog">
-<meta property="og:url" content="https://showbang.github.io/typistShow/archives/2017/01/index.html">
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="WebServer와 WAS의 차이점Web ServerWeb browser client로부터 HTTP Request를 받아 자료콘텐츠에 따라 HTTP에 반응합니다.Client가 GET,POST,UPDATE,DELETE등의 메소드를 이용하여 Request를 요청하면,그에 해당하는 결과값을 돌려주는 기능을 합니다. Client가 요청한 것 중에 웹서버 자체적으로">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webServer와 WAS의 차이점">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/02/07/webServerWAS/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="my first hexo blog">
+<meta property="og:description" content="WebServer와 WAS의 차이점Web ServerWeb browser client로부터 HTTP Request를 받아 자료콘텐츠에 따라 HTTP에 반응합니다.Client가 GET,POST,UPDATE,DELETE등의 메소드를 이용하여 Request를 요청하면,그에 해당하는 결과값을 돌려주는 기능을 합니다. Client가 요청한 것 중에 웹서버 자체적으로">
+<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/webServer.gif">
+<meta property="og:updated_time" content="2017-02-07T02:14:30.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Show's blog">
-<meta name="twitter:description" content="my first hexo blog">
+<meta name="twitter:title" content="webServer와 WAS의 차이점">
+<meta name="twitter:description" content="WebServer와 WAS의 차이점Web ServerWeb browser client로부터 HTTP Request를 받아 자료콘텐츠에 따라 HTTP에 반응합니다.Client가 GET,POST,UPDATE,DELETE등의 메소드를 이용하여 Request를 요청하면,그에 해당하는 결과값을 돌려주는 기능을 합니다. Client가 요청한 것 중에 웹서버 자체적으로">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/webServer.gif">
     
 
     
@@ -123,410 +128,126 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2017/1
+    <a class="page-title-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/typistShow/categories/etc/web/">web</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-webServerWAS" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        webServer와 WAS의 차이점
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/typistShow/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            <div class="article-subtitle">
+                <a href="/typistShow/2017/02/07/webServerWAS/" class="article-date">
+    <time datetime="2017-02-07T01:59:02.000Z" itemprop="datePublished">2017-02-07</time>
+</a>
+                
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/typistShow/2017/01/31/jqGrid상세사용법/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/javascript.jpg)" alt="jqGrid상세사용법" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/31/jqGrid상세사용법/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="WebServer와-WAS의-차이점"><a href="#WebServer와-WAS의-차이점" class="headerlink" title="WebServer와 WAS의 차이점"></a>WebServer와 WAS의 차이점</h4><h5 id="Web-Server"><a href="#Web-Server" class="headerlink" title="Web Server"></a>Web Server</h5><p>Web browser client로부터 HTTP Request를 받아 자료콘텐츠에 따라 HTTP에 반응합니다.<br>Client가 GET,POST,UPDATE,DELETE등의 메소드를 이용하여 Request를 요청하면,<br>그에 해당하는 결과값을 돌려주는 기능을 합니다. Client가 요청한 것 중에 웹서버 자체적으로<br>처리할 수 없는 것들을 Tomcat과 같은 컨테이너나 PHP모듈과 같이 처리가 가능한 곳으로 넘겨,<br>처리결과를 받아 Client에게 전송해주는 역할도 수행합니다.</p>
+<h5 id="WAS-Web-Application-Server"><a href="#WAS-Web-Application-Server" class="headerlink" title="WAS(Web Application Server)"></a>WAS(Web Application Server)</h5><p>웹 기반 시스템 개발을 용이하게 해주며 안정적인 트랜젝션 처리를 해주는 미들웨어 시스템.<br>Client와 SErver간 Application 연동을 해줍니다. 웹서버에 Container가 추가된 것이,WAS.<br>Container는 JSP,SErvlet등의 구동 환경을 제공하여 동적 Data처리를 가능하게 만들어줍니다.</p>
+<img src="/typistShow/2017/02/07/webServerWAS/webServer.gif" alt="WebServer" title="WebServer">
+<img src="/typistShow/2017/02/07/webServerWAS/WAS.gif" alt="WAS" title="WAS">
+<p>위의 그림을 보면 볼 수 있듯이 WAS에서는 Application Server에서의 코드와 데이터를<br>조작할 수 있게 하여 동적인 데이터로 처리할 수 있게 만들어 주는 역할을 합니다.<br>우리가 흔히 쓰는 Apache가 대표적인 WebServer이며, Tomcat은 Apache사에서 제공하는<br>WAS입니다.</p>
+<p>WAS가 WebServer를 포함하고 있으므로 WebServer가 필요하지 않다고 생각할 수도 있는데,<br>WebServer는 정적인 데이터를 처리하는 서버이기 때문에, 이미지나 단순 html 파일과 같은<br>리소스를 제공하는 서버는 WAS에서 제공하는 Container 기능이 필요가 없으며 WebServer를<br>이용하는 것이 더 빠르고 안정적입니다. 물론 DB에서 데이터를 주고 받거나, 프로그램상에서의<br>데이터 조작이 이루어져야 할때에는 WAS를 사용해야 합니다.</p>
+<p>이러한 장단점들을 보완하기 위하여 두개의 서버를 연동하여 사용할 수 있습니다.<br>Client Request는 WebServer에서 받고 내부 프로그램은 WAS를 통하여 처리한다면,<br>정적,동적인 데이터를 모두 효과적인 처리를 할 수 있게 됩니다.</p>
+<h6 id="WebServer와-WAS를-연동하는-이유"><a href="#WebServer와-WAS를-연동하는-이유" class="headerlink" title="WebServer와 WAS를 연동하는 이유"></a>WebServer와 WAS를 연동하는 이유</h6><ul>
+<li>WAS는 WebServer만큼 정적인 데이터를 빠르며 안정적이게 처리하지 못한다.</li>
+<li>WAS는 WebServer만큼 다양한 옵션 및 환경 설정 기능을 제공하지 않는다.</li>
+<li>상용화 되어있는 많은 사이트들이 Webserver기반으로 많은 시스템을 개발해놓은 상태.</li>
+<li>CGI,PHP등 ServerSide Application등과 다양한 모듈들을 WAS에서는 실행시킬수 없다.</li>
+</ul>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
+        </div>
+        <footer class="article-footer">
             
-            </p>
-            <p class="date"><time datetime="2017-01-31T06:35:31.000Z" itemprop="datePublished">2017-01-31</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/31/jqGrid상세사용법/">jqGrid상세사용법</a>
-        </h1>
-    
 
-        <p class="article-excerpt">
-            jqGrid 상세사용법.jqGrid의 기초적인 사용법에 이어서 상세사용법을 포스팅하도록 하겠습니다.
-12345678910111213141516171819202122232425262728293031323334$("#id").jqGrid(&#123;	url : "데이터를 받아올 url",	datatype : "받아올 datatype",	colNames : ['
-        </p>
+
+
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/02/07/webServerWAS/" data-id="ciyuvohvw000j68ugs63kux5o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/25/testpost/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/javascript.jpg)" alt="창 resize 방법" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/25/testpost/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/javascript/">javascript</a>
-            </p>
-            <p class="date"><time datetime="2017-01-25T09:04:03.000Z" itemprop="datePublished">2017-01-25</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/25/testpost/">창 resize 방법</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            동적인 css로 코딩을 하지 않았을 경우 처음 창크기에 맞게 css가 조절된 후 css가 변경되지 않을 때가 있다.이때는 jQuery를 이용해서 쉽게 resize를 시킬 수 있다.
-123$(window).resize(function()&#123;	//제어해야 할 코드&#125;).resize();
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/25/생성/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/java.png)" alt="POI를 이용하여 엑셀파일 생성하기" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/25/생성/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/java/">java</a>
-            </p>
-            <p class="date"><time datetime="2017-01-25T08:04:11.000Z" itemprop="datePublished">2017-01-25</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/25/생성/">POI를 이용하여 엑셀파일 생성하기</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            POI 이용 엑셀 파일 생성데이터를 넘겨받아 엑셀파일로 만드는 방법에 관해 포스팅을 해보겠습니다.
-먼저 POI를 이용하기 위하여 POI라이브러리가 필요합니다.
-POI jar파일은 http://poi.apache.org/download.html 에서 다운받은 후 라이브러리에 추가해주시면 됩니다.
-POI의 엑셀생성방식은 엑셀 97~03버전으로 생성되는 HSSF
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/25/자바압축파일생성/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/java.png)" alt="자바압축파일생성" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/25/자바압축파일생성/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/java/">java</a>
-            </p>
-            <p class="date"><time datetime="2017-01-25T06:15:35.000Z" itemprop="datePublished">2017-01-25</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/25/자바압축파일생성/">자바압축파일생성</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            자바 압축파일 생성 방법이번에는 자바코딩으로 압축파일을 생성하는 방법을 포스팅 해보겠습니다.서버에서 파일을 다운또는 생성하여 압축파일을 생성하는 방법입니다.
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/17/자료형비교/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/javascript.jpg)" alt="자료형비교" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/17/자료형비교/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/javascript/">javascript</a>
-            </p>
-            <p class="date"><time datetime="2017-01-17T06:21:35.000Z" itemprop="datePublished">2017-01-17</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/17/자료형비교/">자료형비교</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            자바스크립트 == 연산자와 === 연산자의 차이점자바스크립트 소스코드를 찾다보면 비교연산자중 ==와 ===를 볼 수 있다.이 둘의 차이점은== =&gt; 값을 비교한다.=== =&gt; 값과 자료형을 비교한다.
-예를 들면
-123456789101112131415161718var a = 1;var b = "1";// ==연산자일 경우 값이 같으므로 true 반
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/11/폴더테스트/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/java.png)" alt="Servlet이란" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/11/폴더테스트/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/java/">java</a>
-            </p>
-            <p class="date"><time datetime="2017-01-11T00:37:17.000Z" itemprop="datePublished">2017-01-11</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/11/폴더테스트/">Servlet이란</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Servlet이란??서블릿은 Server+Applet으로 “Client의 요청을 처리하고 그 결과를 다시 Client에게 전송하는 Servlet Class의 구현 규칙을 지킨 자바 프로그램”이다.자바프로그램이라고 정의했다면 당연히 JDK가 필요하며, 자바 API를 동작시키는 JVM이 필요하다. Servlet은 Web Application 확장이 용이하고 플
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/10/staticFinal/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/java.png)" alt="static, final, abstract" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/10/staticFinal/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/java/">java</a>
-            </p>
-            <p class="date"><time datetime="2017-01-10T07:37:03.000Z" itemprop="datePublished">2017-01-10</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/10/staticFinal/">static, final, abstract</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
-final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/typistShow/2017/01/10/page/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/java.png)" alt="contains, substring, indexOf" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://showbang.github.io/typistShow/typistShow/2017/01/10/page/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/typistShow/categories/java/">java</a>
-            </p>
-            <p class="date"><time datetime="2017-01-10T05:00:54.000Z" itemprop="datePublished">2017-01-10</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/typistShow/2017/01/10/page/">contains, substring, indexOf</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            contains - 문자나 문자열을 포함하는지 확인 후 true,false 반환substring - 문자열의 인덱스값을 받은 후, 인덱스값에 알맞는 문자 또는 문자열을 반환indexOf - 문자나 문자열을 받아 그에 맞는 인덱스 값을 반환
-사용법을 예로 들면
-contains123String movieTitle="나는 네가 지난 여름에 한 일을 알고 있다."
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -587,6 +308,19 @@ contains123String movieTitle="나는 네가 지난 여름에 한 일을 알고 �
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/typistShow/2017/02/07/cache/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">cache</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -770,11 +504,13 @@ contains123String movieTitle="나는 네가 지난 여름에 한 일을 알고 �
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/02/07/webServerWAS/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
