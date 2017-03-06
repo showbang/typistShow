@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>linuxapache | Show&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="CentOS에서 apache 설치 및 was 연동이번포스팅은 WAS설치에 이어서 웹서버 설치 및 연동에 대해 포스팅 해보겠습니다.
+설치준비물
+필수패키지 설치앞에서 포스팅한 Tomcat설치를 따라하셨다면 건너가도 무방합니다.
+
+12345yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linuxapache">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/03/06/linuxapache/index.html">
+<meta property="og:site_name" content="Show's blog">
+<meta property="og:description" content="CentOS에서 apache 설치 및 was 연동이번포스팅은 WAS설치에 이어서 웹서버 설치 및 연동에 대해 포스팅 해보겠습니다.
+설치준비물
+필수패키지 설치앞에서 포스팅한 Tomcat설치를 따라하셨다면 건너가도 무방합니다.
+
+12345yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib">
+<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/apache.jpg">
+<meta property="og:updated_time" content="2017-03-06T04:50:31.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linuxapache">
+<meta name="twitter:description" content="CentOS에서 apache 설치 및 was 연동이번포스팅은 WAS설치에 이어서 웹서버 설치 및 연동에 대해 포스팅 해보겠습니다.
+설치준비물
+필수패키지 설치앞에서 포스팅한 Tomcat설치를 따라하셨다면 건너가도 무방합니다.
+
+12345yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/apache.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Show&#39;s blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/typistShow/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/typistShow/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/typistShow/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/typistShow/css/style.css">
+
+    <script src="/typistShow/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/typistShow/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/typistShow/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Show&#39;s blog using hexo</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/typistShow/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/typistShow">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/typistShow/categories/etc/">etc</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/typistShow/categories/etc/myBatis/">myBatis</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/typistShow/categories/etc/web/">web</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/typistShow/categories/java/">java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/typistShow/categories/javascript/">javascript</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/typistShow/',
+        CONTENT_URL: '/typistShow/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/typistShow/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/typistShow/categories/etc/web/">web</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-linuxapache" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        linuxapache
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/typistShow/2017/03/06/linuxapache/" class="article-date">
+    <time datetime="2017-03-06T02:21:14.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="CentOS에서-apache-설치-및-was-연동"><a href="#CentOS에서-apache-설치-및-was-연동" class="headerlink" title="CentOS에서 apache 설치 및 was 연동"></a>CentOS에서 apache 설치 및 was 연동</h4><p>이번포스팅은 WAS설치에 이어서 웹서버 설치 및 연동에 대해 포스팅 해보겠습니다.</p>
+<h5 id="설치준비물"><a href="#설치준비물" class="headerlink" title="설치준비물"></a>설치준비물</h5><ul>
+<li>필수패키지 설치<br>앞에서 포스팅한 Tomcat설치를 따라하셨다면 건너가도 무방합니다.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib </div><div class="line">zlib-devel curl openssl openssl-devel libtermcap-devel libc-client-devel</div><div class="line">bison gcc g++ cpp gcc-c++ freetype freetype-devel freetype-utils gd </div><div class="line">gd-devel libjpeg libjpeg-devel libpng libpng-devel curl curl-devel </div><div class="line">flex php-mbstring libexif-devel cmake</div></pre></td></tr></table></figure>
+<h5 id="설치파일-다운로드"><a href="#설치파일-다운로드" class="headerlink" title="설치파일 다운로드"></a>설치파일 다운로드</h5><ul>
+<li>PCRE 라이브러리 (HTTPD 설치 필수 라이브러리)</li>
+</ul>
+<p><a href="http://sourceforge.net/projects/pcre/files/pcre/" target="_blank" rel="external">http://sourceforge.net/projects/pcre/files/pcre/</a><br>pcre-x.xx.tar.gz (원하는 버전 다운로드)</p>
+<ul>
+<li>APR 라이브러리 (HTTPD 설치 필수 라이브러리)</li>
+</ul>
+<p><a href="http://mirror.apache-kr.org/apr/" target="_blank" rel="external">http://mirror.apache-kr.org/apr/</a><br>apr-x.x.x.tar.gz (원하는 버전 다운로드)<br>apr-util-x.x.x.tar.gz (원하는 버전 다운로드)</p>
+<ul>
+<li>GEOIP 라이브러리 (세계 IP 국가코드 라이브러리)</li>
+</ul>
+<p><a href="https://github.com/maxmind/geoip-api-c/releases" target="_blank" rel="external">https://github.com/maxmind/geoip-api-c/releases</a><br>GeoIP-x.x.x.tar.gz (원하는 버전 다운로드)</p>
+<p><a href="https://github.com/maxmind/geoip-api-mod_geoip2/releases" target="_blank" rel="external">https://github.com/maxmind/geoip-api-mod_geoip2/releases</a><br>geoip-api-mod_geoip2-x.x.x.tar.gz (원하는 버전 다운로드)</p>
+<p><a href="http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz" target="_blank" rel="external">http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz</a><br>GeoIP.dat</p>
+<ul>
+<li>HTTPD 엔진</li>
+</ul>
+<p><a href="http://httpd.apache.org/" target="_blank" rel="external">http://httpd.apache.org/</a><br>httpd-x.x.xx.tar.gz (원하는 버전 다운로드)</p>
+<ul>
+<li>mod_jk.so (HTTPD와 WAS Connector)</li>
+</ul>
+<p><a href="http://tomcat.apache.org/download-connectors.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-connectors.cgi</a><br>tomcat-connectors-x.x.xx-src.tar.gz</p>
+<ul>
+<li>Tomcat (미설치자만)</li>
+</ul>
+<p><a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-70.cgi</a><br>apache-tomcat-x.x.xx.tar.gz (원하는 버전 다운로드)</p>
+<h5 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h5><ul>
+<li><p>설치 경로 설정</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> SETUP_HOME=/프로젝트이름/setup</div><div class="line"><span class="built_in">export</span> ENGINE_HOME=/프로젝트이름/project/engine</div><div class="line"><span class="built_in">export</span> HTTPD_HOME=<span class="variable">$ENGINE_HOME</span>/httpd</div></pre></td></tr></table></figure>
+</li>
+<li><p>export로 변수설정 후 폴더생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p <span class="variable">$ENGINE_HOME</span></div><div class="line">mkdir -p <span class="variable">$SETUP_HOME</span></div><div class="line">mkdir -p <span class="variable">$HTTPD_HOME</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>httpd설치전 라이브러리를 먼저 설치해줍니다.</p>
+<ul>
+<li>cronolog (미설치 시)<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zxvf cronolog-x.x.x.tar.gz</div><div class="line"><span class="built_in">cd</span> cronolog-x.x.x</div><div class="line">./configure</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>여기서 jdk와 tomcat과는 다르게 ./configure와 make &amp;&amp; make install이 있는데<br>./configure는 MakeFile 즉 컴파일 옵션이 설정되는 파일이 만들어지는 명령어입니다.<br>컴파일하는 클라이언트의 사양에 맞는 환경에 알맞는 파일이 생성됩니다.<br>그 후 make로 소스코드를 실제로 컴파일하여 binary 파일을 생성시킨 후<br>make install 명령어로 만들어진 binary 파일을 ./configure에서 지정한 ENGINE_HOME으로<br>이동시켜줍니다. 이 이후에도 ./configure와 make &amp;&amp; make install이 있는데 마찬가지입니다.</p>
+<ul>
+<li><p>apr 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zvxf apr-x.x.x.tar.gz</div><div class="line"><span class="built_in">cd</span> apr-x.x.x</div><div class="line">./configure --prefix=<span class="variable">$ENGINE_HOME</span>/apr-x.x.x</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+</li>
+<li><p>pcre 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zvxf pcre-x.xx.tar.gz</div><div class="line"><span class="built_in">cd</span> pcre-x.xx</div><div class="line">./configure --prefix=<span class="variable">$ENGINE_HOME</span>/pcre-x.xx</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>그 후 httpd를 설치 해줍니다.</p>
+<ul>
+<li>httpd 설치<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zxvf httpd-2.4.10.tar.gz</div><div class="line"><span class="built_in">cd</span> httpd-2.4.10</div><div class="line"></div><div class="line"><span class="built_in">export</span> CFLAGS=<span class="string">"<span class="variable">$&#123;CFLAGS&#125;</span> -DHARD_SERVER_LIMIT=8192 -DDEFAULT_SERVER_LIMIT=8192"</span></div><div class="line">./configure --prefix=<span class="variable">$ENGINE_HOME</span>/httpd \</div><div class="line">--with-apr=<span class="variable">$ENGINE_HOME</span>/apr-x.x.x \</div><div class="line">--with-apr-util=<span class="variable">$ENGINE_HOME</span>/apr-util-x.x.x \</div><div class="line">--with-pcre=<span class="variable">$ENGINE_HOME</span>/pcre-x.xx \</div><div class="line">--with-mpm=prefork \</div><div class="line">--enable-cache \</div><div class="line">--enable-ssl --with-ssl=/usr \</div><div class="line">--enable-rewrite --enable-lib64 --libdir=/usr/lib64 \</div><div class="line">--enable-mods-shared=all --enable-so --enable-rewrite</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>CFLAGS명령어로 먼저 설치 한 라이브러리들과 연동 후 binary 파일을 생성시킵니다.</p>
+<ul>
+<li>geoIP 설치<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"> <span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zvxf GeoIP-x.x.x.tar.gz</div><div class="line"><span class="built_in">cd</span> ./GeoIP-x.x.x</div><div class="line">./configure --prefix=<span class="variable">$ENGINE_HOME</span>/GeoIP</div><div class="line"></div><div class="line">make &amp;&amp; make install</div><div class="line"></div><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zvxf geoip-api-mod_geoip2-1.2.9.tar.gz</div><div class="line"><span class="built_in">cd</span> ./geoip-api-mod_geoip2-1.2.9</div><div class="line"><span class="variable">$HTTPD_HOME</span>/bin/apxs -i <span class="_">-a</span> \</div><div class="line">-L<span class="variable">$ENGINE_HOME</span>/GeoIP/lib \</div><div class="line">-I<span class="variable">$ENGINE_HOME</span>/GeoIP/include \</div><div class="line"><span class="_">-l</span>GeoIP -c ./mod_geoip.c</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>geoIP 라이브러리를 생성하게되면 $HTTPD_HOME/modules/ 위치에 mod_geoip.so 가 생성됩니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/geoIp.png" alt="geoIp" title="geoIp">
+<p>그리고 $HTTPD_HOME/conf 위치에 httpd.conf파일에 LoadModule geoIP가 추가됩니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/mod_geoIp.png" alt="mod_geoIp" title="mod_geoIp">
+<p>그 후 GeoIP.dat 파일의 압축해제 후 GeoIP 폴더에 복사합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">gzip <span class="_">-d</span> GeoIP.dat.gz</div><div class="line">mkdir -p <span class="variable">$ENGINE_HOME</span>/GeoIP/share/GeoIP</div><div class="line">cp ./GeoIP.dat <span class="variable">$ENGINE_HOME</span>/GeoIP/share/GeoIP/.</div></pre></td></tr></table></figure>
+<h5 id="tomcat-connector-설치"><a href="#tomcat-connector-설치" class="headerlink" title="tomcat-connector 설치"></a>tomcat-connector 설치</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zxvf tomcat-connectors-x.x.xx-src.tar.gz</div><div class="line"><span class="built_in">cd</span> tomcat-connectors-x.x.xx-src/native/</div><div class="line">./buildconf.sh</div><div class="line">./configure --with-apxs=<span class="variable">$HTTPD_HOME</span>/bin/apxs</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>이 작업이 완료되면 $HTTPD_HOME/modules 안에 mod_jk.so 파일이 생성됩니다.</p>
+
+<p>이렇게 설치작업은 완료됩니다. 설치를 완료 한 후, ENGINE_HOME은</p>
+<img src="/typistShow/2017/03/06/linuxapache/engine_home.png" alt="engine_home" title="engine_home">
+<h5 id="WAS-연동세팅"><a href="#WAS-연동세팅" class="headerlink" title="WAS 연동세팅"></a>WAS 연동세팅</h5><p>Apache웹서버와 Tomcat의 연동을 위하여 HTTPD의 옵션을 설정해줍니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$HTTPD_HOME</span>/conf</div></pre></td></tr></table></figure>
+<p>로 이동해보면</p>
+<img src="/typistShow/2017/03/06/linuxapache/httpdConf.png" alt="httpdConf" title="httpdConf">
+<p>이렇게 위치가 되어있습니다.<br>workers.properties파일과 mod_jk.conf 파일같은경우 처음세팅하신 분들은 없을 수도 있습니다.<br>그럴경우에는 파일을 추가해주시면 됩니다.</p>
+<ul>
+<li>httpd.conf<br>먼저 httpd.conf 파일을 세팅합니다</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi httpd.conf</div></pre></td></tr></table></figure>
+<p>ServerRoot를 아파치가 설치된 경로로 변경합니다.<br>Listen 포트를 80으로 선언해줍니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/serverRoot.png" alt="serverRoot" title="serverRoot">
+<p>ServerName을 해당서버의 IP로 변경합니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/serverRoot.png" alt="serverRoot" title="serverRoot">
+<p>LoadModule에 Mod_jk.so를 추가해줍니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/LoadModule.png" alt="LoadModule" title="LoadModule">
+<p>그 후 mod_jk.conf파일을 Include 시킵니다.<br>지금 당장 파일이 없어도 생성을 할 것이기 때문에 일단 Include 시켜줍니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/Include.png" alt="Include" title="Include">
+<p>일단 이 상태에서 httpd.conf 파일을 저장해줍니다.</p>
+<ul>
+<li>workers.properties<br>workers.properties 파일을 열어줍니다.<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi workers.properties</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>이렇게 vi 편집모드로 열게 되면 만약 파일이 있다면 파일을 연 후, 편집모드로 들어가고<br>없는파일이라면 새 파일이 생성됩니다. 그 후 workers.properties 파일에 밑 내용을 추가합니다.</p>
+<p>workers.tomcat_home=톰캣경로<br>worker.list=tomcat<br>worker.tomcat.type=ajp13<br>worker.tomcat.host=xxx.xxx.xxx.xxx-&gt; 연결될 와스 ip로 변경<br>worker.tomcat.port=8009<br>worker.tomcat.lbfactor=1<br>worker.tomcat.connection_pool_timeout=600<br>worker.tomcat.socket_keepalive=1</p>
+<img src="/typistShow/2017/03/06/linuxapache/workersProperties.png" alt="workersProperties" title="workersProperties">
+<p>톰캣의 server.xml에 보면 ajp13타입의 8009포트가 열려있습니다. 이 포트를 통하여 Tomcat과 연동합니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/workersProperties.png" alt="workersProperties" title="workersProperties">
+<ul>
+<li>mod_jk.conf</li>
+</ul>
+<p>이 위에서 httpd.conf 파일에 Include 시켰던 mod_jk.conf 파일을 편집합니다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi mod_jk.conf</div></pre></td></tr></table></figure>
+<p>편집모드로 열어줍니다. 이때도, 파일이 없다면 파일은 생성됩니다.</p>
+<p>밑의 코드를 추가시켜줍니다. 로그파일과 tomcat과의 연동 시 어떤 properties를 사용하는지<br>어떤 파일을 tomcat에 넘기는지를 세팅해줍니다.</p>
+<p>JkWorkersFile    /projectName/project/engine/httpd/conf/workers.properties<br>JkShmFile        /projectName/project/engine/apache-tomcat-8.0.41/logs/mod<em>jk</em>%Y%m%d.shm<br>JkLogFile        /projectName/project/engine/apache-tomcat-8.0.41/logs/mod<em>jk</em>%Y%m%d.log<br>JkLogLevel       error<br>JkMount          /<em> tomcat<br>JkUnmount        /</em>.jsp tomcat</p>
+<img src="/typistShow/2017/03/06/linuxapache/mod_jk.conf.png" alt="mod_jk.conf" title="mod_jk.conf">
+<p>이렇게 세팅을 마친 후 웹 서버를 실행 시킵니다.</p>
+<p>$HTTPD_HOME/bin 으로 이동해보면</p>
+<img src="/typistShow/2017/03/06/linuxapache/apacheStart.png" alt="apacheStart" title="apacheStart">
+<p>apachectl이라는 파일이 존재하는데 </p>
+<ul>
+<li>./apachectl start : 웹서버기동</li>
+<li>./apachectl stop  : 웹서버 중지</li>
+<li>./apachectl restart : 웹서버 재기동</li>
+</ul>
+<p>이렇게 웹서버를 기동시킵니다. </p>
+<p>웹서버를 기동 시킨 후 8080 포트가 아닌 80포트로 접속 시 tomcat 고양이 메인화면이 뜨면 성공입니다.</p>
+<img src="/typistShow/2017/03/06/linuxapache/tomcatMain.jpg" alt="tomcatMain" title="tomcatMain">
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/03/06/linuxapache/" data-id="cizxhd5uv000m0wug6d0hm6h7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/typistShow/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/typistShow/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/typistShow/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/typistShow/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/typistShow/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/typistShow/2017/03/04/linuxTomcat/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">CentOS에서 tomcat 설치</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/typistShow/2017/03/06/linuxapache/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/typistShow/image/apache.jpg)" alt="linuxapache" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/typistShow/categories/etc/web/">web</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/03/06/linuxapache/" class="title">linuxapache</a></p>
+                            <p class="item-date"><time datetime="2017-03-06T02:21:14.000Z" itemprop="datePublished">2017-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/typistShow/2017/03/04/linuxTomcat/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/typistShow/image/tomcat.png)" alt="CentOS에서 tomcat 설치" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/typistShow/categories/etc/web/">web</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/03/04/linuxTomcat/" class="title">CentOS에서 tomcat 설치</a></p>
+                            <p class="item-date"><time datetime="2017-03-04T01:47:58.000Z" itemprop="datePublished">2017-03-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/typistShow/2017/02/20/이벤트키코드/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/typistShow/image/javascript.jpg)" alt="이벤트키코드" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/javascript/">javascript</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/02/20/이벤트키코드/" class="title">이벤트키코드</a></p>
+                            <p class="item-date"><time datetime="2017-02-20T07:05:17.000Z" itemprop="datePublished">2017-02-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/typistShow/2017/02/07/webServerWAS/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/typistShow/image/webServer.gif)" alt="webServer와 WAS의 차이점" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/typistShow/categories/etc/web/">web</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/02/07/webServerWAS/" class="title">webServer와 WAS의 차이점</a></p>
+                            <p class="item-date"><time datetime="2017-02-07T01:59:02.000Z" itemprop="datePublished">2017-02-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/typistShow/2017/02/07/cache/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/typistShow/image/cache.gif)" alt="cache" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/typistShow/categories/etc/web/">web</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/02/07/cache/" class="title">cache</a></p>
+                            <p class="item-date"><time datetime="2017-02-07T01:44:19.000Z" itemprop="datePublished">2017-02-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/">etc</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/myBatis/">myBatis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/web/">web</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/java/">java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/javascript/">javascript</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/02/">February 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/typistShow/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 keunhan Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/03/06/linuxapache/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/typistShow/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/typistShow/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/typistShow/js/main.js"></script>
+
+    </div>
+</body>
+</html>

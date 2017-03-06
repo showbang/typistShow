@@ -10,21 +10,21 @@
     
     <meta name="description" content="CentOS에서 tomcat 설치이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.
 설치준비물
-필수패키지 설치yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl opens">
+필수패키지 설치12345yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS에서 tomcat 설치">
 <meta property="og:url" content="https://showbang.github.io/typistShow/2017/03/04/linuxTomcat/index.html">
 <meta property="og:site_name" content="Show's blog">
 <meta property="og:description" content="CentOS에서 tomcat 설치이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.
 설치준비물
-필수패키지 설치yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl opens">
+필수패키지 설치12345yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl">
 <meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/tomcat.png">
-<meta property="og:updated_time" content="2017-03-06T00:30:38.968Z">
+<meta property="og:updated_time" content="2017-03-06T03:52:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS에서 tomcat 설치">
 <meta name="twitter:description" content="CentOS에서 tomcat 설치이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.
 설치준비물
-필수패키지 설치yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl opens">
+필수패키지 설치12345yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl">
 <meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/tomcat.png">
     
 
@@ -163,50 +163,58 @@
         <div class="article-entry" itemprop="articleBody">
             <h4 id="CentOS에서-tomcat-설치"><a href="#CentOS에서-tomcat-설치" class="headerlink" title="CentOS에서 tomcat 설치"></a>CentOS에서 tomcat 설치</h4><p>이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.<br>추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.</p>
 <h5 id="설치준비물"><a href="#설치준비물" class="headerlink" title="설치준비물"></a>설치준비물</h5><ul>
-<li>필수패키지 설치<br>yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl openssl openssl-devel libtermcap-devel libc-client-devel bison gcc g++ cpp gcc-c++ freetype freetype-devel freetype-utils gd gd-devel libjpeg libjpeg-devel libpng libpng-devel curl curl-devel flex php-mbstring libexif-devel cmake</li>
+<li>필수패키지 설치<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib </div><div class="line">zlib-devel curl openssl openssl-devel libtermcap-devel libc-client-devel</div><div class="line">bison gcc g++ cpp gcc-c++ freetype freetype-devel freetype-utils gd </div><div class="line">gd-devel libjpeg libjpeg-devel libpng libpng-devel curl curl-devel </div><div class="line">flex php-mbstring libexif-devel cmake</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <p>위의 패키지를 OS에 설치해줍니다.</p>
 <p>그 후, tomcat 설치에 필요한 파일들을 다운받습니다.</p>
 <ul>
-<li><p>jdk<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br>jdk-7u79-linux-x64.tar (원하는 버젼의 tar파일)</p>
-</li>
-<li><p>Cronlog Library<br>이 라이브러리는 로그를 날짜별로 파싱해주는 라이브러리입니다.<br><a href="http://cronolog.org/" target="_blank" rel="external">http://cronolog.org/</a><br>cronolog-1.6.2.tar.gz (원하는 버전의 tar파일)</p>
-</li>
-<li><p>Tomcat<br><a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-70.cgi</a><br>apache-tomcat-7.0.62.tar (원하는 버전의 tar파일)</p>
-</li>
+<li>jdk</li>
 </ul>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br>jdk-7u79-linux-x64.tar (원하는 버젼의 tar파일)</p>
+<ul>
+<li>Cronlog Library</li>
+</ul>
+<p>이 라이브러리는 로그를 날짜별로 파싱해주는 라이브러리입니다.<br><a href="http://cronolog.org/" target="_blank" rel="external">http://cronolog.org/</a><br>cronolog-1.6.2.tar.gz (원하는 버전의 tar파일)</p>
+<ul>
+<li>Tomcat</li>
+</ul>
+<p><a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-70.cgi</a><br>apache-tomcat-7.0.62.tar (원하는 버전의 tar파일)</p>
 <h5 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h5><ul>
 <li>설치 경로 설정<br>setup_home과 engine_home은 자주 사용하기 때문에 변수선언을 해줍니다.</li>
 </ul>
-<p>export SETUP_HOME = /프로젝트명/setup<br>export ENGINE_HOME = /프로젝트명/project/engine</p>
-<p>그 다음 폴더를 생성해줍니다.</p>
-<p>mkdir -p $ENGINE_HOME<br>mkdir -p $SETUP_HOME</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> SETUP_HOME = /프로젝트명/setup</div><div class="line"><span class="built_in">export</span> ENGINE_HOME = /프로젝트명/project/engine</div></pre></td></tr></table></figure>
+<p>그 다음 폴더를 생성해줍니다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p <span class="variable">$ENGINE_HOME</span></div><div class="line">mkdir -p <span class="variable">$SETUP_HOME</span></div></pre></td></tr></table></figure></p>
 <p>폴더를 생성한 후, 다운받은 tar 압축파일들을 SETUP_HOME폴더에 위치시킵니다.</p>
 <ul>
-<li><p>jdk 설치<br>cd $SETUP_HOME (SETUP_HOME으로 이동)<br>tar -vxf jdk_xxxx_linux-x64.tar.gz (tar파일 압축해제)<br>mv ./jdkxxxx.xx/ $ENGINE_HOME/. (압축해제한 폴더 ENGINE_HOME으로 이동)</p>
+<li>jdk 설치<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -vxf jdk_xxxx_linux-x64.tar.gz </div><div class="line">mv ./jdkxxxx.xx/ <span class="variable">$ENGINE_HOME</span>/.</div></pre></td></tr></table></figure>
 </li>
-<li><p>tomcat 설치<br>cd $SETUP_HOME<br>tar -zvxf ./apache-tomcat-x.x.xx.tar.gz<br>mv ./apache-tomcat-x.x.xx/ $ENGINE_HOME/.</p>
+</ul>
+<p>SETUP_HOME으로 이동 후 tar압축파일을 풀고 SETUP_HOME에 생성된 jdk 폴더를 ENGINE_HOME으로 이동 시킵니다.</p>
+<ul>
+<li><p>tomcat 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zvxf ./apache-tomcat-x.x.xx.tar.gz</div><div class="line">mv ./apache-tomcat-x.x.xx/ <span class="variable">$ENGINE_HOME</span>/.</div></pre></td></tr></table></figure>
 </li>
-<li><p>cronlog 설치<br>cd $SETUP_HOME<br>tar -zvxf cronolog-x.x.x.tar.gz<br>cd cronolog-x.x.x<br>./configure –prefix=$ENGINE_HOME/cronolog<br>make &amp;&amp; make install</p>
+<li><p>cronlog 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$SETUP_HOME</span></div><div class="line">tar -zvxf cronolog-x.x.x.tar.gz</div><div class="line"><span class="built_in">cd</span> cronolog-x.x.x</div><div class="line">./configure --prefix=<span class="variable">$ENGINE_HOME</span>/cronolog</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>여기서 jdk와 tomcat과는 다르게 ./configure와 make &amp;&amp; make install이 있는데<br>./configure는 MakeFile 즉 컴파일 옵션이 설정되는 파일이 만들어지는 명령어입니다.<br>컴파일하는 클라이언트의 사양에 맞는 환경에 알맞는 파일이 생성됩니다.<br>그 후 make로 소스코드를 실제로 컴파일하여 binary 파일을 생성시킨 후<br>make install 명령어로 만들어진 binary 파일을 ./configure에서 지정한 ENGINE_HOME으로<br>이동시켜줍니다.</p>
-<p>이렇게 전부 설치를 하고 ENGINE_HOME으로 이동시켰다면 현재 ENGINE_HOME에 있어야할것은</p>
-<ul>
-<li>jdk</li>
-<li>apache-tomcat</li>
-<li>cronolog</li>
-</ul>
+<p>이렇게 전부 설치를 하고 ENGINE_HOME으로 이동시켰다면 현재 ENGINE_HOME에 있어야할것은<br><img src="/typistShow/2017/03/04/linuxTomcat/engineHome.png" alt="ENGINE_HOME" title="ENGINE_HOME"></p>
 <p>이렇게 3개의 폴더가 위치하고 있어야 합니다.</p>
-<h5 id="옵션조정"><a href="#옵션조정" class="headerlink" title="옵션조정"></a>옵션조정</h5><p>옵션조정은 설정방법과 의도에따라 옵션이 다르기 때문에</p>
-<p>/프로젝트이름/project/engine/apache-tomcat-x.x.xx/conf/server.xml<br>/프로젝트이름/project/engine/apache-tomcat-x.x.xx/conf/tomcat-users.xml</p>
-<p>이 두 곳의 설정을 바꿔줍니다.</p>
-<h5 id="WAS-OS-setting"><a href="#WAS-OS-setting" class="headerlink" title="WAS OS setting"></a>WAS OS setting</h5><p>먼저 etc폴더에 있는 profile파일을 편집모드로 열어줍니다.<br>vi /etc/profile</p>
-<p>그 후 밑의 변수설정파일들을 세팅해준다.</p>
+<h5 id="옵션조정"><a href="#옵션조정" class="headerlink" title="옵션조정"></a>옵션조정</h5><p>옵션조정은 설정방법과 의도에따라 옵션이 다르기 때문에 원하시는 설정으로 바꿔주시면 됩니다.</p>
+<p>먼저 server.xml 파일을 편집모드로 열어봅니다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /프로젝트이름/project/engine/apache-tomcat-x.x.xx/conf/server.xml</div></pre></td></tr></table></figure></p>
+<img src="/typistShow/2017/03/04/linuxTomcat/serverXml.png" alt="server.xml" title="server.xml">
+<p>편집모드로 열고 밑으로 내리면 Host 설정과 Context 설정이 있습니다.<br>Host appBase는 보통 webapps 폴더에 설정하게 되는데 war파일을 배포하여 tomcat을 실행시키면 webapps 폴더밑에 클래스파일이 생성되기 때문입니다.<br>Context같은 경우는 기본 path를 설정해주시고 appBase 폴더 밑에 어떤 폴더를 실행할건지 설정해줍니다.</p>
+<h5 id="WAS-OS-setting"><a href="#WAS-OS-setting" class="headerlink" title="WAS OS setting"></a>WAS OS setting</h5><p>먼저 etc폴더에 있는 profile파일을 편집모드로 열어줍니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile</div></pre></td></tr></table></figure></p>
+<p>그 후 밑의 변수설정파일들을 profile파일에 추가해줍니다.</p>
 <p>#. /etc/init.d/msm_profile<br>export LANG=ko_KR.eucKR<br>export ENGINE_HOME=/프로젝트명/project/engine<br>export JAVA_HOME=$ENGINE_HOME/jdkx.x.xx_xx<br>export CATALINA_HOME=$ENGINE_HOME/apache-tomcat-x.x.xx<br>export CLASSPATH=$CATALINA_HOME/lib:$CLASSPATH:$JAVA_HOME/lib:.<br>export PATH=$PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin<br>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CATALINA_HOME/lib</p>
+<img src="/typistShow/2017/03/04/linuxTomcat/profile.png" alt="profile" title="profile">
 <h5 id="WAS-기동"><a href="#WAS-기동" class="headerlink" title="WAS 기동"></a>WAS 기동</h5><p>일단 apache-tomcat의 bin폴더로 이동합니다.<br>그 곳에있는 셸스크립트로 WAS를 기동합니다.</p>
+<img src="/typistShow/2017/03/04/linuxTomcat/bin.png" alt="bin" title="bin">
 <p>./startup.sh : 기동<br>./shutdown.sh : 중지</p>
 <p>./startup.sh를 실행시킨 후, 8080포트로 접속했을 때 Apache-tomcat 고양이가 있는<br>페이지가 뜨면 성공입니다.</p>
+<img src="/typistShow/2017/03/04/linuxTomcat/tomcatMain.jpg" alt="톰캣메인화면" title="톰캣메인화면">
 <p>server.xml 설정과 세세한 설정파일들은 사용하는 사람들에따라 다르기 때문에, 자세히 다루지 않았습니다.<br>저도 물론 초보이지만 혹시 제 블로그를 보고 따라하시다가 안되면 댓글달아주시면<br>답변드리겠습니다~~<br>다음 포스팅은 apache웹서버 설치 후 tomcat과 연동하는 방법에 대해 포스팅하겠습니다.</p>
 
         </div>
@@ -215,7 +223,7 @@
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/03/04/linuxTomcat/" data-id="cizxdichh000okkug28qiu5ad" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/03/04/linuxTomcat/" data-id="cizxhd5ut000k0wugweamgq4y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -352,6 +360,16 @@
         
 <nav id="article-nav">
     
+        <a href="/typistShow/2017/03/06/linuxapache/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            linuxapache
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/typistShow/2017/02/20/이벤트키코드/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -370,6 +388,26 @@
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/typistShow/2017/03/06/linuxapache/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/typistShow/image/apache.jpg)" alt="linuxapache" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/typistShow/categories/etc/web/">web</a></p>
+                            <p class="item-title"><a href="/typistShow/2017/03/06/linuxapache/" class="title">linuxapache</a></p>
+                            <p class="item-date"><time datetime="2017-03-06T02:21:14.000Z" itemprop="datePublished">2017-03-06</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -451,26 +489,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/typistShow/2017/02/07/restful이란/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/typistShow/image/restfulImg.jpg)" alt="restful이란?" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/typistShow/categories/etc/web/">web</a></p>
-                            <p class="item-title"><a href="/typistShow/2017/02/07/restful이란/" class="title">restful이란?</a></p>
-                            <p class="item-date"><time datetime="2017-02-07T01:24:12.000Z" itemprop="datePublished">2017-02-07</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -480,7 +498,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/">etc</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/myBatis/">myBatis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/web/">web</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/java/">java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/javascript/">javascript</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/">etc</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/myBatis/">myBatis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/etc/web/">web</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/java/">java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/typistShow/categories/javascript/">javascript</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -490,7 +508,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/02/">February 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/03/">March 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/02/">February 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/typistShow/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li></ul>
         </div>
     </div>
 
