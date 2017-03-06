@@ -3,26 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>static, final, abstract | Show&#39;s blog</title>
+    <title>CentOS에서 tomcat 설치 | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
-final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화">
+    <meta name="description" content="CentOS에서 tomcat 설치이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.
+설치준비물
+필수패키지 설치yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl opens">
 <meta property="og:type" content="article">
-<meta property="og:title" content="static, final, abstract">
-<meta property="og:url" content="https://showbang.github.io/typistShow/2017/01/10/staticFinal/index.html">
+<meta property="og:title" content="CentOS에서 tomcat 설치">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/03/04/linuxTomcat/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
-final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화">
-<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
-<meta property="og:updated_time" content="2017-01-25T09:10:20.775Z">
+<meta property="og:description" content="CentOS에서 tomcat 설치이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.
+설치준비물
+필수패키지 설치yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl opens">
+<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/tomcat.png">
+<meta property="og:updated_time" content="2017-03-06T00:30:38.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="static, final, abstract">
-<meta name="twitter:description" content="Related Postsstatic -field와 method 앞에 붙는다. -method 앞에 붙을경우는 field를 변경하지 못한다. -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.
-final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final이 붙으면 변수를 상수화">
-<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
+<meta name="twitter:title" content="CentOS에서 tomcat 설치">
+<meta name="twitter:description" content="CentOS에서 tomcat 설치이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.
+설치준비물
+필수패키지 설치yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl opens">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/tomcat.png">
     
 
     
@@ -131,18 +134,18 @@ final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final�
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/typistShow/categories/java/">java</a>
+    <a class="page-title-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/typistShow/categories/etc/web/">web</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-staticFinal" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-linuxTomcat" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        static, final, abstract
+        CentOS에서 tomcat 설치
         </h1>
     
 
@@ -150,17 +153,61 @@ final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final�
         
         
             <div class="article-subtitle">
-                <a href="/typistShow/2017/01/10/staticFinal/" class="article-date">
-    <time datetime="2017-01-10T07:37:03.000Z" itemprop="datePublished">2017-01-10</time>
+                <a href="/typistShow/2017/03/04/linuxTomcat/" class="article-date">
+    <time datetime="2017-03-04T01:47:58.000Z" itemprop="datePublished">2017-03-04</time>
 </a>
                 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3><h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><p> -field와 method 앞에 붙는다.<br> -method 앞에 붙을경우는 field를 변경하지 못한다.<br> -static은 class를 같이 가지고 메모리에 적재되기 때문에 생성자 없이 ClassName으로 접근 가능하다.</p>
-<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><p> -마지막 상태값을 가져야 할때 쓰는 keword.<br> -변수에 final이 붙으면 변수를 상수화 시킨다.<br> -final이 Class에 붙으면 그 Class는 더이상 확장시키지 않는다.<br> -final이 method에 붙으면 그 method는 더이상 overriding 하지 않는다.<br> -final이 field에 붙으면 그 값은 더이상 상태값을 변경시키지 않는다.</p>
-<h1 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h1><p> -오버라이딩하여 하위클래스에서 메소드를 호출하게 되면 상위클래스에 있는 메소드는 사용되지 않기 때문에 상위클래스의 메소드는 abstract를 이용하여 추상화시킨다.</p>
+            <h4 id="CentOS에서-tomcat-설치"><a href="#CentOS에서-tomcat-설치" class="headerlink" title="CentOS에서 tomcat 설치"></a>CentOS에서 tomcat 설치</h4><p>이번포스팅은 centOS 리눅스환경에서 tomcat 설치방법을 포스팅해보겠습니다.<br>추후 apache 웹서버와의 연동까지 포스팅할 예정입니다.</p>
+<h5 id="설치준비물"><a href="#설치준비물" class="headerlink" title="설치준비물"></a>설치준비물</h5><ul>
+<li>필수패키지 설치<br>yum -y install pcre-devel lua-devel libxml2-devel ncurses-devel zlib zlib-devel curl openssl openssl-devel libtermcap-devel libc-client-devel bison gcc g++ cpp gcc-c++ freetype freetype-devel freetype-utils gd gd-devel libjpeg libjpeg-devel libpng libpng-devel curl curl-devel flex php-mbstring libexif-devel cmake</li>
+</ul>
+<p>위의 패키지를 OS에 설치해줍니다.</p>
+<p>그 후, tomcat 설치에 필요한 파일들을 다운받습니다.</p>
+<ul>
+<li><p>jdk<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br>jdk-7u79-linux-x64.tar (원하는 버젼의 tar파일)</p>
+</li>
+<li><p>Cronlog Library<br>이 라이브러리는 로그를 날짜별로 파싱해주는 라이브러리입니다.<br><a href="http://cronolog.org/" target="_blank" rel="external">http://cronolog.org/</a><br>cronolog-1.6.2.tar.gz (원하는 버전의 tar파일)</p>
+</li>
+<li><p>Tomcat<br><a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-70.cgi</a><br>apache-tomcat-7.0.62.tar (원하는 버전의 tar파일)</p>
+</li>
+</ul>
+<h5 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h5><ul>
+<li>설치 경로 설정<br>setup_home과 engine_home은 자주 사용하기 때문에 변수선언을 해줍니다.</li>
+</ul>
+<p>export SETUP_HOME = /프로젝트명/setup<br>export ENGINE_HOME = /프로젝트명/project/engine</p>
+<p>그 다음 폴더를 생성해줍니다.</p>
+<p>mkdir -p $ENGINE_HOME<br>mkdir -p $SETUP_HOME</p>
+<p>폴더를 생성한 후, 다운받은 tar 압축파일들을 SETUP_HOME폴더에 위치시킵니다.</p>
+<ul>
+<li><p>jdk 설치<br>cd $SETUP_HOME (SETUP_HOME으로 이동)<br>tar -vxf jdk_xxxx_linux-x64.tar.gz (tar파일 압축해제)<br>mv ./jdkxxxx.xx/ $ENGINE_HOME/. (압축해제한 폴더 ENGINE_HOME으로 이동)</p>
+</li>
+<li><p>tomcat 설치<br>cd $SETUP_HOME<br>tar -zvxf ./apache-tomcat-x.x.xx.tar.gz<br>mv ./apache-tomcat-x.x.xx/ $ENGINE_HOME/.</p>
+</li>
+<li><p>cronlog 설치<br>cd $SETUP_HOME<br>tar -zvxf cronolog-x.x.x.tar.gz<br>cd cronolog-x.x.x<br>./configure –prefix=$ENGINE_HOME/cronolog<br>make &amp;&amp; make install</p>
+</li>
+</ul>
+<p>여기서 jdk와 tomcat과는 다르게 ./configure와 make &amp;&amp; make install이 있는데<br>./configure는 MakeFile 즉 컴파일 옵션이 설정되는 파일이 만들어지는 명령어입니다.<br>컴파일하는 클라이언트의 사양에 맞는 환경에 알맞는 파일이 생성됩니다.<br>그 후 make로 소스코드를 실제로 컴파일하여 binary 파일을 생성시킨 후<br>make install 명령어로 만들어진 binary 파일을 ./configure에서 지정한 ENGINE_HOME으로<br>이동시켜줍니다.</p>
+<p>이렇게 전부 설치를 하고 ENGINE_HOME으로 이동시켰다면 현재 ENGINE_HOME에 있어야할것은</p>
+<ul>
+<li>jdk</li>
+<li>apache-tomcat</li>
+<li>cronolog</li>
+</ul>
+<p>이렇게 3개의 폴더가 위치하고 있어야 합니다.</p>
+<h5 id="옵션조정"><a href="#옵션조정" class="headerlink" title="옵션조정"></a>옵션조정</h5><p>옵션조정은 설정방법과 의도에따라 옵션이 다르기 때문에</p>
+<p>/프로젝트이름/project/engine/apache-tomcat-x.x.xx/conf/server.xml<br>/프로젝트이름/project/engine/apache-tomcat-x.x.xx/conf/tomcat-users.xml</p>
+<p>이 두 곳의 설정을 바꿔줍니다.</p>
+<h5 id="WAS-OS-setting"><a href="#WAS-OS-setting" class="headerlink" title="WAS OS setting"></a>WAS OS setting</h5><p>먼저 etc폴더에 있는 profile파일을 편집모드로 열어줍니다.<br>vi /etc/profile</p>
+<p>그 후 밑의 변수설정파일들을 세팅해준다.</p>
+<p>#. /etc/init.d/msm_profile<br>export LANG=ko_KR.eucKR<br>export ENGINE_HOME=/프로젝트명/project/engine<br>export JAVA_HOME=$ENGINE_HOME/jdkx.x.xx_xx<br>export CATALINA_HOME=$ENGINE_HOME/apache-tomcat-x.x.xx<br>export CLASSPATH=$CATALINA_HOME/lib:$CLASSPATH:$JAVA_HOME/lib:.<br>export PATH=$PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin<br>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CATALINA_HOME/lib</p>
+<h5 id="WAS-기동"><a href="#WAS-기동" class="headerlink" title="WAS 기동"></a>WAS 기동</h5><p>일단 apache-tomcat의 bin폴더로 이동합니다.<br>그 곳에있는 셸스크립트로 WAS를 기동합니다.</p>
+<p>./startup.sh : 기동<br>./shutdown.sh : 중지</p>
+<p>./startup.sh를 실행시킨 후, 8080포트로 접속했을 때 Apache-tomcat 고양이가 있는<br>페이지가 뜨면 성공입니다.</p>
+<p>server.xml 설정과 세세한 설정파일들은 사용하는 사람들에따라 다르기 때문에, 자세히 다루지 않았습니다.<br>저도 물론 초보이지만 혹시 제 블로그를 보고 따라하시다가 안되면 댓글달아주시면<br>답변드리겠습니다~~<br>다음 포스팅은 apache웹서버 설치 후 tomcat과 연동하는 방법에 대해 포스팅하겠습니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -168,7 +215,7 @@ final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final�
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/01/10/staticFinal/" data-id="cizxdicg90003kkug3b3106kc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/03/04/linuxTomcat/" data-id="cizxdichh000okkug28qiu5ad" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -305,20 +352,10 @@ final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final�
         
 <nav id="article-nav">
     
-        <a href="/typistShow/2017/01/11/폴더테스트/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Servlet이란
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/typistShow/2017/01/10/page/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/02/20/이벤트키코드/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">contains, substring, indexOf</p>
+        <p class="article-nav-title">이벤트키코드</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -491,7 +528,7 @@ final -마지막 상태값을 가져야 할때 쓰는 keword. -변수에 final�
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/01/10/staticFinal/';
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/03/04/linuxTomcat/';
     
     (function() {
     var dsq = document.createElement('script');
