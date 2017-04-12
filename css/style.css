@@ -966,13 +966,13 @@ code {
 }
 .article-summary .article-summary-inner .thumbnail {
   height: 0;
-  width: 100%;
+  width: 52%;
   display: block;
   overflow: hidden;
   position: relative;
   margin-bottom: 1em;
   padding-bottom: 47.11%;
-  margin-left: 15%;
+  margin-left: 18%;
 }
 .article-summary .article-summary-inner .thumbnail .comment-counter {
   right: 0;
