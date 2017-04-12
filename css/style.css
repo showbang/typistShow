@@ -239,7 +239,7 @@ code {
   padding: 0 20px;
 }
 .container-inner {
-  max-width: 1320px;
+  max-width: 1250px;
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
@@ -972,6 +972,7 @@ code {
   position: relative;
   margin-bottom: 1em;
   padding-bottom: 47.11%;
+  margin-left: 15%;
 }
 .article-summary .article-summary-inner .thumbnail .comment-counter {
   right: 0;
