@@ -3,26 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>myBatis에서 insert 후 원하는 컬럼 select 해오기 | Show&#39;s blog</title>
+    <title>FTP 파일업로드 | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
+    <meta name="description" content="FTP 파일업로드이번에는 자바에서 FTP서버로 파일을 업로드하는 방법을 포스팅해보겠습니다.
+먼저 FTP와 접속하기 위해서는 FTPClient가 필요합니다.
+직접 다운로드 받으시려면 http://jakarta.apache.org/site/downloads/downloads_commons-net.cgi위 링크에서 다운받으신 후 라이브러리에 추가해주시면 됩니다.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myBatis에서 insert 후 원하는 컬럼 select 해오기">
-<meta property="og:url" content="https://showbang.github.io/typistShow/2017/02/03/myBatisKeyProperty/index.html">
+<meta property="og:title" content="FTP 파일업로드">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/04/11/FTP업로드/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
-<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/myBatis.png">
-<meta property="og:updated_time" content="2017-02-07T01:23:35.384Z">
+<meta property="og:description" content="FTP 파일업로드이번에는 자바에서 FTP서버로 파일을 업로드하는 방법을 포스팅해보겠습니다.
+먼저 FTP와 접속하기 위해서는 FTPClient가 필요합니다.
+직접 다운로드 받으시려면 http://jakarta.apache.org/site/downloads/downloads_commons-net.cgi위 링크에서 다운받으신 후 라이브러리에 추가해주시면 됩니다.">
+<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
+<meta property="og:updated_time" content="2017-04-11T01:54:23.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myBatis에서 insert 후 원하는 컬럼 select 해오기">
-<meta name="twitter:description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
-<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/myBatis.png">
+<meta name="twitter:title" content="FTP 파일업로드">
+<meta name="twitter:description" content="FTP 파일업로드이번에는 자바에서 FTP서버로 파일을 업로드하는 방법을 포스팅해보겠습니다.
+먼저 FTP와 접속하기 위해서는 FTPClient가 필요합니다.
+직접 다운로드 받으시려면 http://jakarta.apache.org/site/downloads/downloads_commons-net.cgi위 링크에서 다운받으신 후 라이브러리에 추가해주시면 됩니다.">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
     
 
     
@@ -131,18 +134,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/typistShow/categories/etc/myBatis/">myBatis</a>
+    <a class="page-title-link" href="/typistShow/categories/java/">java</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-myBatisKeyProperty" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-FTP업로드" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        myBatis에서 insert 후 원하는 컬럼 select 해오기
+        FTP 파일업로드
         </h1>
     
 
@@ -150,17 +153,22 @@
         
         
             <div class="article-subtitle">
-                <a href="/typistShow/2017/02/03/myBatisKeyProperty/" class="article-date">
-    <time datetime="2017-02-03T00:49:08.000Z" itemprop="datePublished">2017-02-03</time>
+                <a href="/typistShow/2017/04/11/FTP업로드/" class="article-date">
+    <time datetime="2017-04-11T01:29:00.000Z" itemprop="datePublished">2017-04-11</time>
 </a>
                 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="myBatis에서-insert-후-원하는-컬럼-select-해오기"><a href="#myBatis에서-insert-후-원하는-컬럼-select-해오기" class="headerlink" title="myBatis에서 insert 후 원하는 컬럼 select 해오기"></a>myBatis에서 insert 후 원하는 컬럼 select 해오기</h4><p>코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.<br>이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌<br>원하는 컬럼의 값을 return받을 수 있습니다.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertBaby"</span> <span class="attr">parameterType</span>=<span class="string">"baby"</span> </span></div><div class="line">		<span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"bNo"</span>&gt;</div><div class="line">	INSERT INTO baby (</div><div class="line">		 B_NAME</div><div class="line">		 ,B_BIRTH</div><div class="line">		 ,B_SEX</div><div class="line">		 ,B_NATURE</div><div class="line">		 ,B_TYPE</div><div class="line">		 ,B_PHOTO</div><div class="line">		 ,U_NO</div><div class="line">	) VALUES (</div><div class="line">	 #&#123;bName&#125; </div><div class="line">		 ,#&#123;bBirth:VARCHAR&#125; </div><div class="line">		 ,#&#123;bSex&#125;</div><div class="line">		 ,#&#123;bNature:VARCHAR&#125;</div><div class="line">		 ,#&#123;bType:VARCHAR&#125;</div><div class="line">		 ,#&#123;bPhoto:VARCHAR&#125;</div><div class="line">		 ,#&#123;mom.uNo&#125;</div><div class="line">	)	</div><div class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>위 코드처럼 userGeneratedKeys의 값을 true로 지정해주고,<br>keyProperty값에 return받을 column을 지정해줍니다.<br>이렇게 되면 insert 후 myBatis에서 return해주는 값은<br>insert한 bNo값을 return해줍니다. keyProperty를 이용하면<br>insert 후 select해오는 로직을 생략할 수 있습니다.</p>
+            <h3 id="FTP-파일업로드"><a href="#FTP-파일업로드" class="headerlink" title="FTP 파일업로드"></a>FTP 파일업로드</h3><p>이번에는 자바에서 FTP서버로 파일을 업로드하는 방법을 포스팅해보겠습니다.</p>
+<p>먼저 FTP와 접속하기 위해서는 FTPClient가 필요합니다.</p>
+<p>직접 다운로드 받으시려면 <a href="http://jakarta.apache.org/site/downloads/downloads_commons-net.cgi" target="_blank" rel="external">http://jakarta.apache.org/site/downloads/downloads_commons-net.cgi</a><br>위 링크에서 다운받으신 후 라이브러리에 추가해주시면 됩니다.</p>
+<p>maven프로젝트일 경우는<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-net<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-net<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>gradle프로젝트일 경우는<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile group: 'commons-net', name: 'commons-net', version: '3.6'</div></pre></td></tr></table></figure></p>
+<p>버전은 원하시는 버전을 하셔도 상관없습니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">className</span> </span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String server = <span class="string">"server IP"</span>;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">int</span> port = port Number;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String user = <span class="string">"userId"</span>;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String pw = <span class="string">"password"</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ftpTest</span><span class="params">(..,..,..)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">	<span class="comment">//받는 변수는 request를 보낸 것에 맞게 받으시면 됩니다.</span></div><div class="line"></div><div class="line">	<span class="comment">//웹에서 받은 MultipartFile을 File로 변환시켜줍니다.</span></div><div class="line">	File convertFile = <span class="keyword">new</span> File(fileName);</div><div class="line">	convertFile.createNewFile();</div><div class="line">	FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(convertFile);</div><div class="line">	fos.write(uploadFile.get(<span class="number">0</span>).getBytes());</div><div class="line">	fos.close();</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		<span class="comment">//FTPClient를 생성합니다.</span></div><div class="line">		FTPClient ftp = <span class="keyword">new</span> FTPClient();</div><div class="line">		FileInputStream fis = <span class="keyword">null</span></div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">//원하시는 인코딩 타입</span></div><div class="line">			ftp.setControlEncoding(<span class="string">"utf-8"</span>);</div><div class="line">			ftp.connect(server,port);</div><div class="line">			ftp.login(user,pw);</div><div class="line">			<span class="comment">//원하시는 파일 타입</span></div><div class="line">			ftp.setFileType(FTP.BINARY_FILE_TYPE);</div><div class="line">			ftp.enterLocalPassiveMode();</div><div class="line"></div><div class="line">			<span class="comment">//제대로 연결이 안댔을 경우 ftp접속을 끊습니다.</span></div><div class="line">			<span class="keyword">if</span>(!FTPReply.isPositiveCompletion(ftp.getReplyCode())) &#123;</div><div class="line">				ftp.disconnect();</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			<span class="comment">//파일을 넣을 디렉토리를 설정해줍니다.</span></div><div class="line">			<span class="comment">//makeDirectory는 directory 생성이 필요할 때만 해주시면 됩니다.</span></div><div class="line">			ftp.makeDirectory(directoryRoot);</div><div class="line">			ftp.changeWorkingDirectory(directoryRoot);</div><div class="line"></div><div class="line">			<span class="comment">//그 후 이전에 File로 변환한 업로드파일을 읽어 FTP로 전송합니다.</span></div><div class="line">			fis = <span class="keyword">new</span> FileInputStream(convertFile);</div><div class="line">			isSuccess = ftp.storeFile(fileName, fis);</div><div class="line"></div><div class="line">			<span class="comment">//storeFile Method는 파일 송신결과를 boolean값으로 리턴합니다</span></div><div class="line">			<span class="keyword">if</span>(isSuccess) &#123;</div><div class="line">				System.out.println(<span class="string">"업로드 성공"</span>);</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				System.out.println(<span class="string">"업로드 실패"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="keyword">if</span>(fis!=<span class="keyword">null</span>) &#123;</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					fis.close();</div><div class="line">				&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125; <span class="keyword">finally</span> &#123;</div><div class="line">		<span class="keyword">if</span>(ftp!=<span class="keyword">null</span> &amp;&amp; ftp.isConnected()) &#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				ftp.disconnect();</div><div class="line">			&#125; <span class="keyword">catch</span>(Exception e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>이렇게 해서 FTP업로드 로직을 포스팅해봤습니다.<br>여기서 주의할 점은 FTPClient의 생성입니다.<br>저는 처음에 전역변수로 FTPClient를 선언해주었는데 이렇게 되면,<br>FTP로 송신 중 다른 FTP요청이 들어오면 작업중인 연결이 끊어지게 됩니다.<br>그런것을 방지하기 위하여 요청때마다 메소드안에서 FTPClient를 생성하여<br>FTPClient를 중복사용 하지 않게 방지할 수 있습니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -168,7 +176,7 @@
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/02/03/myBatisKeyProperty/" data-id="cj1cviw720007i0ugonaxs2df" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/04/11/FTP업로드/" data-id="cj1cviw7w000qi0ug6b5tiqb3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -305,20 +313,10 @@
         
 <nav id="article-nav">
     
-        <a href="/typistShow/2017/02/07/where1-1/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            1=1 조건을 넣는 이유
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/typistShow/2017/01/31/jqGrid상세사용법/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/04/11/nullCheck/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">jqGrid상세사용법</p>
+        <p class="article-nav-title">myBatis에서 null과 nullString을 체크할 때</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -491,7 +489,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/02/03/myBatisKeyProperty/';
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/04/11/FTP업로드/';
     
     (function() {
     var dsq = document.createElement('script');

@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>myBatis에서 insert 후 원하는 컬럼 select 해오기 | Show&#39;s blog</title>
+    <title>콤마로 replace나 split을 할 때. | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
+    <meta name="description" content="콤마로 replace나 split을 할 때.자바에서 replace나 split을 콤마로 할 때 그냥 콤마를 입력하게 되면 값이 아무것도 안찍히게 됩니다.
+12345String test = &quot;테스트.입니다.안녕하세요.&quot;;String replaceTest = test.replace(&quot;.&quot;,&quot;&quot;);String[] splitTest = test.split(&quot;.&quot;)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myBatis에서 insert 후 원하는 컬럼 select 해오기">
-<meta property="og:url" content="https://showbang.github.io/typistShow/2017/02/03/myBatisKeyProperty/index.html">
+<meta property="og:title" content="콤마로 replace나 split을 할 때.">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/04/11/replaceComma/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
-<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/myBatis.png">
-<meta property="og:updated_time" content="2017-02-07T01:23:35.384Z">
+<meta property="og:description" content="콤마로 replace나 split을 할 때.자바에서 replace나 split을 콤마로 할 때 그냥 콤마를 입력하게 되면 값이 아무것도 안찍히게 됩니다.
+12345String test = &quot;테스트.입니다.안녕하세요.&quot;;String replaceTest = test.replace(&quot;.&quot;,&quot;&quot;);String[] splitTest = test.split(&quot;.&quot;)">
+<meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
+<meta property="og:updated_time" content="2017-04-11T01:24:46.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myBatis에서 insert 후 원하는 컬럼 select 해오기">
-<meta name="twitter:description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
-<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/myBatis.png">
+<meta name="twitter:title" content="콤마로 replace나 split을 할 때.">
+<meta name="twitter:description" content="콤마로 replace나 split을 할 때.자바에서 replace나 split을 콤마로 할 때 그냥 콤마를 입력하게 되면 값이 아무것도 안찍히게 됩니다.
+12345String test = &quot;테스트.입니다.안녕하세요.&quot;;String replaceTest = test.replace(&quot;.&quot;,&quot;&quot;);String[] splitTest = test.split(&quot;.&quot;)">
+<meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/java.png">
     
 
     
@@ -131,18 +131,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/typistShow/categories/etc/">etc</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/typistShow/categories/etc/myBatis/">myBatis</a>
+    <a class="page-title-link" href="/typistShow/categories/java/">java</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-myBatisKeyProperty" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-replaceComma" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        myBatis에서 insert 후 원하는 컬럼 select 해오기
+        콤마로 replace나 split을 할 때.
         </h1>
     
 
@@ -150,17 +150,18 @@
         
         
             <div class="article-subtitle">
-                <a href="/typistShow/2017/02/03/myBatisKeyProperty/" class="article-date">
-    <time datetime="2017-02-03T00:49:08.000Z" itemprop="datePublished">2017-02-03</time>
+                <a href="/typistShow/2017/04/11/replaceComma/" class="article-date">
+    <time datetime="2017-04-11T01:14:26.000Z" itemprop="datePublished">2017-04-11</time>
 </a>
                 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="myBatis에서-insert-후-원하는-컬럼-select-해오기"><a href="#myBatis에서-insert-후-원하는-컬럼-select-해오기" class="headerlink" title="myBatis에서 insert 후 원하는 컬럼 select 해오기"></a>myBatis에서 insert 후 원하는 컬럼 select 해오기</h4><p>코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.<br>이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌<br>원하는 컬럼의 값을 return받을 수 있습니다.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertBaby"</span> <span class="attr">parameterType</span>=<span class="string">"baby"</span> </span></div><div class="line">		<span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"bNo"</span>&gt;</div><div class="line">	INSERT INTO baby (</div><div class="line">		 B_NAME</div><div class="line">		 ,B_BIRTH</div><div class="line">		 ,B_SEX</div><div class="line">		 ,B_NATURE</div><div class="line">		 ,B_TYPE</div><div class="line">		 ,B_PHOTO</div><div class="line">		 ,U_NO</div><div class="line">	) VALUES (</div><div class="line">	 #&#123;bName&#125; </div><div class="line">		 ,#&#123;bBirth:VARCHAR&#125; </div><div class="line">		 ,#&#123;bSex&#125;</div><div class="line">		 ,#&#123;bNature:VARCHAR&#125;</div><div class="line">		 ,#&#123;bType:VARCHAR&#125;</div><div class="line">		 ,#&#123;bPhoto:VARCHAR&#125;</div><div class="line">		 ,#&#123;mom.uNo&#125;</div><div class="line">	)	</div><div class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>위 코드처럼 userGeneratedKeys의 값을 true로 지정해주고,<br>keyProperty값에 return받을 column을 지정해줍니다.<br>이렇게 되면 insert 후 myBatis에서 return해주는 값은<br>insert한 bNo값을 return해줍니다. keyProperty를 이용하면<br>insert 후 select해오는 로직을 생략할 수 있습니다.</p>
+            <h3 id="콤마로-replace나-split을-할-때"><a href="#콤마로-replace나-split을-할-때" class="headerlink" title="콤마로 replace나 split을 할 때."></a>콤마로 replace나 split을 할 때.</h3><p>자바에서 replace나 split을 콤마로 할 때 그냥 콤마를 입력하게 되면 값이 아무것도 안찍히게 됩니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String test = <span class="string">"테스트.입니다.안녕하세요."</span>;</div><div class="line">String replaceTest = test.replace(<span class="string">"."</span>,<span class="string">""</span>);</div><div class="line">String[] splitTest = test.split(<span class="string">"."</span>);</div><div class="line"><span class="comment">//replaceTest의 결과값 = nullString</span></div><div class="line"><span class="comment">// splitTest의 길이 = 0</span></div></pre></td></tr></table></figure>
+<p>이렇게 아예 콤마를 인식을 못하게 되는데, 콤마를 대괄호로 묶어서 입력해야 제대로 원하는 값을 얻을 수 있습니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String test = <span class="string">"테스트.입니다.안녕하세요."</span>;</div><div class="line">String replaceTest = test.replace(<span class="string">"[.]"</span>,<span class="string">""</span>);</div><div class="line">String[] splitTest = test.split(<span class="string">"[.]"</span>);</div><div class="line"><span class="comment">//replaceTest의 결과값 = 테스트입니다안녕하세요</span></div><div class="line"><span class="comment">// splitTest의 길이 = 4</span></div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -168,7 +169,7 @@
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/02/03/myBatisKeyProperty/" data-id="cj1cviw720007i0ugonaxs2df" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/04/11/replaceComma/" data-id="cj1cviw7z000si0ugfkn1gcjy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -305,20 +306,20 @@
         
 <nav id="article-nav">
     
-        <a href="/typistShow/2017/02/07/where1-1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/04/11/nullCheck/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            1=1 조건을 넣는 이유
+            myBatis에서 null과 nullString을 체크할 때
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/typistShow/2017/01/31/jqGrid상세사용법/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/03/06/linuxapache/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">jqGrid상세사용법</p>
+        <p class="article-nav-title">linuxapache</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -491,7 +492,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/02/03/myBatisKeyProperty/';
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/04/11/replaceComma/';
     
     (function() {
     var dsq = document.createElement('script');

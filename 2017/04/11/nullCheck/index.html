@@ -3,25 +3,28 @@
 <head>
     <meta charset="utf-8">
     
-    <title>myBatis에서 insert 후 원하는 컬럼 select 해오기 | Show&#39;s blog</title>
+    <title>myBatis에서 null과 nullString을 체크할 때 | Show&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
+    <meta name="description" content="myBatis에서 null과 nullString을 체크할 때myBatis를 사용할 때 if문에서 null과 nullString을 체크할 때가 있습니다.
+123&amp;lt;if test=&quot;!test.equals(&apos;&apos;) and test!=null&quot;&amp;gt;WHERE TEST_NAME = #&amp;#123;test&amp;#125;&amp;lt;/if&amp;gt;
+test변수가 null이나 n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myBatis에서 insert 후 원하는 컬럼 select 해오기">
-<meta property="og:url" content="https://showbang.github.io/typistShow/2017/02/03/myBatisKeyProperty/index.html">
+<meta property="og:title" content="myBatis에서 null과 nullString을 체크할 때">
+<meta property="og:url" content="https://showbang.github.io/typistShow/2017/04/11/nullCheck/index.html">
 <meta property="og:site_name" content="Show's blog">
-<meta property="og:description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
+<meta property="og:description" content="myBatis에서 null과 nullString을 체크할 때myBatis를 사용할 때 if문에서 null과 nullString을 체크할 때가 있습니다.
+123&amp;lt;if test=&quot;!test.equals(&apos;&apos;) and test!=null&quot;&amp;gt;WHERE TEST_NAME = #&amp;#123;test&amp;#125;&amp;lt;/if&amp;gt;
+test변수가 null이나 n">
 <meta property="og:image" content="https://showbang.github.io/typistShow/typistShow/image/myBatis.png">
-<meta property="og:updated_time" content="2017-02-07T01:23:35.384Z">
+<meta property="og:updated_time" content="2017-04-11T01:27:22.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myBatis에서 insert 후 원하는 컬럼 select 해오기">
-<meta name="twitter:description" content="myBatis에서 insert 후 원하는 컬럼 select 해오기코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌원하는 컬럼의 값을 return받을 수 있습니다.
-1234567891011121314151617181920&amp;lt;insert id">
+<meta name="twitter:title" content="myBatis에서 null과 nullString을 체크할 때">
+<meta name="twitter:description" content="myBatis에서 null과 nullString을 체크할 때myBatis를 사용할 때 if문에서 null과 nullString을 체크할 때가 있습니다.
+123&amp;lt;if test=&quot;!test.equals(&apos;&apos;) and test!=null&quot;&amp;gt;WHERE TEST_NAME = #&amp;#123;test&amp;#125;&amp;lt;/if&amp;gt;
+test변수가 null이나 n">
 <meta name="twitter:image" content="https://showbang.github.io/typistShow/typistShow/image/myBatis.png">
     
 
@@ -135,14 +138,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-myBatisKeyProperty" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-nullCheck" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        myBatis에서 insert 후 원하는 컬럼 select 해오기
+        myBatis에서 null과 nullString을 체크할 때
         </h1>
     
 
@@ -150,25 +153,25 @@
         
         
             <div class="article-subtitle">
-                <a href="/typistShow/2017/02/03/myBatisKeyProperty/" class="article-date">
-    <time datetime="2017-02-03T00:49:08.000Z" itemprop="datePublished">2017-02-03</time>
+                <a href="/typistShow/2017/04/11/nullCheck/" class="article-date">
+    <time datetime="2017-04-11T01:23:16.000Z" itemprop="datePublished">2017-04-11</time>
 </a>
                 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="myBatis에서-insert-후-원하는-컬럼-select-해오기"><a href="#myBatis에서-insert-후-원하는-컬럼-select-해오기" class="headerlink" title="myBatis에서 insert 후 원하는 컬럼 select 해오기"></a>myBatis에서 insert 후 원하는 컬럼 select 해오기</h4><p>코딩을 하면서 insert후에 insert한 컬럼의 값을 가져올 일이 있습니다.<br>이때 keyProperty를 이용하면 insert 후 return값으로 int값이 아닌<br>원하는 컬럼의 값을 return받을 수 있습니다.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertBaby"</span> <span class="attr">parameterType</span>=<span class="string">"baby"</span> </span></div><div class="line">		<span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"bNo"</span>&gt;</div><div class="line">	INSERT INTO baby (</div><div class="line">		 B_NAME</div><div class="line">		 ,B_BIRTH</div><div class="line">		 ,B_SEX</div><div class="line">		 ,B_NATURE</div><div class="line">		 ,B_TYPE</div><div class="line">		 ,B_PHOTO</div><div class="line">		 ,U_NO</div><div class="line">	) VALUES (</div><div class="line">	 #&#123;bName&#125; </div><div class="line">		 ,#&#123;bBirth:VARCHAR&#125; </div><div class="line">		 ,#&#123;bSex&#125;</div><div class="line">		 ,#&#123;bNature:VARCHAR&#125;</div><div class="line">		 ,#&#123;bType:VARCHAR&#125;</div><div class="line">		 ,#&#123;bPhoto:VARCHAR&#125;</div><div class="line">		 ,#&#123;mom.uNo&#125;</div><div class="line">	)	</div><div class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>위 코드처럼 userGeneratedKeys의 값을 true로 지정해주고,<br>keyProperty값에 return받을 column을 지정해줍니다.<br>이렇게 되면 insert 후 myBatis에서 return해주는 값은<br>insert한 bNo값을 return해줍니다. keyProperty를 이용하면<br>insert 후 select해오는 로직을 생략할 수 있습니다.</p>
-
+            <h3 id="myBatis에서-null과-nullString을-체크할-때"><a href="#myBatis에서-null과-nullString을-체크할-때" class="headerlink" title="myBatis에서 null과 nullString을 체크할 때"></a>myBatis에서 null과 nullString을 체크할 때</h3><p>myBatis를 사용할 때 if문에서 null과 nullString을 체크할 때가 있습니다.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"!test.equals('') and test!=null"</span>&gt;</span></div><div class="line">WHERE TEST_NAME = #&#123;test&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">if</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>test변수가 null이나 nullString이 아닐 때 로직을 타게 되어있습니다.<br>그런데 이렇게 if문을 짠후 로직을 돌리면 null값이 로직에 들어가 에러가 납니다.<br>이때는 if문에서 null체크를 먼저 해주면서 에러를 방지할 수 있습니다.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"test!=null and !test.equals('')"</span>&gt;</span></div><div class="line">WHERE TEST_NAME = #&#123;test&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">if</span>&gt;</span></div></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/02/03/myBatisKeyProperty/" data-id="cj1cviw720007i0ugonaxs2df" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://showbang.github.io/typistShow/typistShow/2017/04/11/nullCheck/" data-id="cj1cviw81000ti0ugx1xzws6y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -305,20 +308,20 @@
         
 <nav id="article-nav">
     
-        <a href="/typistShow/2017/02/07/where1-1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/04/11/FTP업로드/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            1=1 조건을 넣는 이유
+            FTP 파일업로드
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/typistShow/2017/01/31/jqGrid상세사용법/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/typistShow/2017/04/11/replaceComma/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">jqGrid상세사용법</p>
+        <p class="article-nav-title">콤마로 replace나 split을 할 때.</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -491,7 +494,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/02/03/myBatisKeyProperty/';
+    var disqus_url = 'https://showbang.github.io/typistShow/typistShow/2017/04/11/nullCheck/';
     
     (function() {
     var dsq = document.createElement('script');
